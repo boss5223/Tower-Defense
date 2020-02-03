@@ -1,0 +1,42 @@
+[
+    {
+        "enemyid": 1,
+        "enemyname": "normalEnemy",
+        "enemytype": "normal",
+        "enemyhp": 100,
+        "enemymaxhp": 100,
+        "enemydamage": 10,
+        "enemydefense": 10,
+        "enemyfirerate": 1.5
+    },
+    {
+        "enemyid": 2,
+        "enemyname": "aggressiveEnemy",
+        "enemytype": "normal",
+        "enemyhp": 100,
+        "enemymaxhp": 100,
+        "enemydamage": 20,
+        "enemydefense": 20,
+        "enemyfirerate": 1.5
+    },
+    {
+        "enemyid": 3,
+        "enemyname": "eliteEnemy",
+        "enemytype": "normal",
+        "enemyhp": 100,
+        "enemymaxhp": 100,
+        "enemydamage": 25,
+        "enemydefense": 35,
+        "enemyfirerate": 1.5
+    },
+    {
+        "enemyid": 4,
+        "enemyname": "Boss",
+        "enemytype": "Boss",
+        "enemyhp": 200,
+        "enemymaxhp": 200,
+        "enemydamage": 50,
+        "enemydefense": 60,
+        "enemyfirerate": 2
+    }
+]
