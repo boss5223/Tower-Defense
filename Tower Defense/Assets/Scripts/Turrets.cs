@@ -4,14 +4,31 @@ using UnityEngine;
 
 public class Turrets : MonoBehaviour
 {
+    public static Turrets instance;
+
+    [Header("Attribute")]
     public int turretsID;
-    public float range = 16;
+    public float range;
     public Transform partToRotate;
     public float rotateSpeed = 10f;
+    public int damage;
+    [Header("Prefab")]
+    public GameObject bulletPrefab;
+    public GameObject firePoint;
 
     private Transform target;
     private float firerate;
-    private int damage;
+    private float firerateCount =0;
+    
+
+    void Awake()
+    {
+        if(instance != null)
+        {
+            return;
+        }
+        instance = this;
+    }
     void Start()
     {
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
@@ -43,6 +60,22 @@ public class Turrets : MonoBehaviour
         if(nearestEnemy != null && shortestDistance <= range)
         {
             target = nearestEnemy.transform;
+        }
+        if(firerateCount <=0)
+        {
+            Shoot();
+            firerateCount = 1f / firerate;
+        }
+        firerateCount -= Time.deltaTime;
+    }
+
+    void Shoot()
+    {
+        GameObject bullet = Instantiate(bulletPrefab, firePoint.transform.position, transform.rotation);
+        Bullet bulletScript = bullet.GetComponent<Bullet>();
+        if(bullet != null)
+        {
+            bulletScript.FindTarget(target);
         }
     }
     

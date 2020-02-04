@@ -7,7 +7,9 @@
         "enemymaxhp": 100,
         "enemydamage": 10,
         "enemydefense": 10,
-        "enemyfirerate": 1.5
+        "enemymovespd": 1,
+        "enemyfirerate": 1.5,
+        "enemycoindrop": 40
     },
     {
         "enemyid": 2,
@@ -17,7 +19,9 @@
         "enemymaxhp": 100,
         "enemydamage": 20,
         "enemydefense": 20,
-        "enemyfirerate": 1.5
+        "enemymovespd": 1.5,
+        "enemyfirerate": 1.5,
+        "enemycoindrop": 60
     },
     {
         "enemyid": 3,
@@ -27,16 +31,20 @@
         "enemymaxhp": 100,
         "enemydamage": 25,
         "enemydefense": 35,
-        "enemyfirerate": 1.5
+        "enemymovespd": 2,
+        "enemyfirerate": 1.5,
+        "enemycoindrop": 100
     },
     {
         "enemyid": 4,
         "enemyname": "Boss",
         "enemytype": "Boss",
-        "enemyhp": 200,
+        "enemyhp": 300,
         "enemymaxhp": 200,
         "enemydamage": 50,
         "enemydefense": 60,
-        "enemyfirerate": 2
+        "enemymovespd": 1.5,
+        "enemyfirerate": 2,
+        "enemycoindrop": 300
     }
 ]

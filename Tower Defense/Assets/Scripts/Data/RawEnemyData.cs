@@ -7,5 +7,7 @@
     public int enemyMaxHP;
     public int enemyDamage;
     public int enemyDefense;
+    public float enemyMoveSpd;
     public float enemyFirerate;
+    public int enemyCoinDrop;
 }

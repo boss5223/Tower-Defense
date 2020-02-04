@@ -7,21 +7,20 @@ public class EnemyAttribute : MonoBehaviour
     // Start is called before the first frame update
     [HideInInspector]public bool isDead = false;
     Animator anim;
-    public string monsterId;
+    public int enemyId;
     public int hp;
     public int maxHP;
-    public int level;
-    public int score;
-
-    
-
-
+    public int damage;
+    public int def;
+    public float firerate;
+    public float movespd;
+    public int coinDrop;
     // Start is called before the first frame update
 
     void Start()
     {
         //level = FindObjectOfType<SetUIManager>().level;
-        GetMonsterData();
+        GetEnemyData();
         anim = GetComponent<Animator>();
     }
     void Update()
@@ -39,26 +38,34 @@ public class EnemyAttribute : MonoBehaviour
         }
     }
     public void GetHit()
-    { 
+    {
         //anim.SetTrigger("Hurt");
-        this.hp = hp - 1;
+        int totalDamage = def - Turrets.instance.damage;
+        if(totalDamage < 0)
+        {
+            totalDamage = 0;
+        }
+        this.hp = hp - totalDamage;
         SettingAttribute();
     }
 
-    void GetMonsterData()
+    void GetEnemyData()
     {
-        //var monsterData = MonsterDataContainer.Instance.GetMonstersData();
-        //Debug.Log(monsterData);
-        //for (int i = 0; i < monsterData.Count; i++)
-        //{
-        //    if (monsterData[i].monsterid == monsterId && monsterData[i].level == level )
-        //    {
-        //        this.hp = monsterData[i].monsterhp;
-        //        this.maxHP = monsterData[i].monstermaxhp;
-        //        this.score = monsterData[i].monsterscore;
-
-        //    }
-        //}
+        var enemyData = EnemyDataContainer.Instance.GetEnemyData();
+        Debug.Log(enemyData);
+        for (int i = 0; i < enemyData.Count; i++)
+        {
+            if (enemyData[i].enemyID == enemyId)
+            {
+                hp = enemyData[i].enemyHP;
+                maxHP = enemyData[i].enemyMaxHP;
+                damage = enemyData[i].enemyDamage;
+                def = enemyData[i].enemyDefense;
+                movespd = enemyData[i].enemyMoveSpd;
+                firerate = enemyData[i].enemyFirerate;
+                coinDrop = enemyData[i].enemyCoinDrop;
+            }
+        }
 
     }
 }
