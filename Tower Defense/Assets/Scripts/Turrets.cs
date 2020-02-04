@@ -31,6 +31,7 @@ public class Turrets : MonoBehaviour
     }
     void Start()
     {
+        GetTurretsData();
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
     }
 
