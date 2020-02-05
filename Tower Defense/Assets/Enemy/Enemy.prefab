@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 6408104717813207355}
   - component: {fileID: 3524747879629655591}
   - component: {fileID: -8702724322246348853}
+  - component: {fileID: 297729775554953578}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5438999069384574655}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 550.8873, y: 240.18987, z: -85.87097}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
@@ -110,3 +111,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &297729775554953578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5438999069384574655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6be64d1ab233f44ab0c0a1afd3d063e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10

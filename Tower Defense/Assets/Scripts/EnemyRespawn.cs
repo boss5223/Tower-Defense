@@ -20,11 +20,10 @@ public class EnemyRespawn : MonoBehaviour
     void SpawnMonster()
     {
         if(monsterInField < spawnMonsterSize) {
-            Enemy.transform.position = transform.position;
-            PoolManager.instance.ReusePool(Enemy, transform.position, Quaternion.identity);
+            PoolManager.instance.ReusePool(Enemy,transform.position, Quaternion.identity);
+            //Instantiate(Enemy, transform.position, Quaternion.identity);
             LastEnemy = GameObject.Find(Enemy.name + "(Clone)");
             monsterInField += 1;
-            spawnMonsterSize += 1;
         }
     }
   

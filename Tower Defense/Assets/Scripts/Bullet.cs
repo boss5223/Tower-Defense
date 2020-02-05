@@ -24,7 +24,6 @@ public class Bullet : MonoBehaviour
 
         if(direction.magnitude <= distanceThisFrame)
         {
-            Debug.Log("Hit");
             return;
         }
         transform.Translate(direction.normalized * distanceThisFrame, Space.World);

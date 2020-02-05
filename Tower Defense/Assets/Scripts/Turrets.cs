@@ -41,7 +41,7 @@ public class Turrets : MonoBehaviour
         {
             return;
         }
-
+        UpdateTarget();
         TargetOnLock();
     }
     void UpdateTarget()
