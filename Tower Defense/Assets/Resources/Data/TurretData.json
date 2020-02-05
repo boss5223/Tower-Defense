@@ -4,7 +4,7 @@
         "turretname": "LightMachine",
         "turrethp": 70,
         "turretmaxhp": 70,
-        "turretdamage": 15,
+        "turretdamage": 35,
         "turretdef": 20,
         "turretdistance": 15,
         "turretfirerate": 3
@@ -14,7 +14,7 @@
         "turretname": "NormalMachine",
         "turrethp": 80,
         "turretmaxhp": 80,
-        "turretdamage": 30,
+        "turretdamage": 50,
         "turretdef": 20,
         "turretdistance": 18,
         "turretfirerate": 1
@@ -24,7 +24,7 @@
         "turretname": "LaserMachine",
         "turrethp": 100,
         "turretmaxhp": 100,
-        "turretdamage": 100,
+        "turretdamage": 110,
         "turretdef": 20,
         "turretdistance": 25,
         "turretfirerate": 0.35

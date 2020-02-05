@@ -62,6 +62,10 @@ public class Turrets : MonoBehaviour
         {
             target = nearestEnemy.transform;
         }
+        else
+        {
+            return;
+        }
         if(firerateCount <=0)
         {
             Shoot();

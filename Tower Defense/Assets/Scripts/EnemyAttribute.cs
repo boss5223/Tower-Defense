@@ -23,7 +23,7 @@ public class EnemyAttribute : MonoBehaviour
         GetEnemyData();
         anim = GetComponent<Animator>();
     }
-    void Update()
+    void FixedUpdate()
     {
         SettingAttribute();
     }
@@ -31,21 +31,22 @@ public class EnemyAttribute : MonoBehaviour
     {
         if (hp <= 0)
         {
-            isDead = true;
-            //SetUIManager.totalScore += score;
             this.gameObject.SetActive(false);
+            EnemyRespawn.monsterInField -= 1;
             hp = maxHP;
         }
     }
     public void GetHit()
     {
         //anim.SetTrigger("Hurt");
-        int totalDamage = def - Turrets.instance.damage;
+        int totalDamage = Turrets.instance.damage - def;
+        Debug.Log(totalDamage);
         if(totalDamage < 0)
         {
             totalDamage = 0;
         }
-        this.hp = hp - totalDamage;
+        hp -=  totalDamage;
+        Debug.Log("Hp Remaining" + hp);
         SettingAttribute();
     }
 

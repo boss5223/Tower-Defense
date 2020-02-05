@@ -771,7 +771,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 1
@@ -2287,9 +2287,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 473642ad76b6c0047ade43e99314d8c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  standardTurretPrefab: {fileID: 2873570000845651852, guid: befccae2e28fc1143a6867f7ce2143d9,
+  standardTurretPrefab: {fileID: 9035023200980106756, guid: 63d8f66fb649d4e41b59860fe04fc777,
     type: 3}
-  anotherTurretPrefab: {fileID: 9035023200980106756, guid: 63d8f66fb649d4e41b59860fe04fc777,
+  anotherTurretPrefab: {fileID: 2873570000845651852, guid: befccae2e28fc1143a6867f7ce2143d9,
     type: 3}
   specialTurretPrefab: {fileID: 5860483337776152352, guid: 99f2859c17120d54f8909216769c2eec,
     type: 3}
@@ -2590,7 +2590,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 1
@@ -2987,12 +2987,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnerid: 1
-  Timer: 1
-  Enemy: {fileID: 5438999069384574655, guid: 53643d80728289942b83927b7d45eeec, type: 3}
-  EnemyName: eiei
-  spawnMonsterSize: 1
+  Timer: 5
+  timeCountdown: 0
+  enemy: {fileID: 5438999069384574655, guid: 53643d80728289942b83927b7d45eeec, type: 3}
+  EnemyName: normal
+  spawnMonsterSize: 6
   repeat: 4
-  monsterInField: 0
+  storage: {fileID: 1677156704}
 --- !u!1001 &1822596115
 PrefabInstance:
   m_ObjectHideFlags: 0

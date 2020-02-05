@@ -23,6 +23,7 @@ public class Enemy : MonoBehaviour
         {
             GetNextWayPoints();
         }
+     
     }
     void GetNextWayPoints()
     {

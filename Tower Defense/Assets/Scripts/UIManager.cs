@@ -20,10 +20,20 @@ public class UIManager : MonoBehaviour
     void Update()
     {
         UpdateCurrency();
+        Updatetime();
     }
     void UpdateCurrency()
     {
         Currency.text = GameManager.currency.ToString()+" $";
     }
+    void Updatetime()
+    {
+        Time.text = GameManager.prepairingTime.ToString("0");
+        if(GameManager.prepairingTime <= 0)
+        {
+            Time.text = GameManager.timeIngame.ToString("0");
+        }
+    }
+    
 
 }

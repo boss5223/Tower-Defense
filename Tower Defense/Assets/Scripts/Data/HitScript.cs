@@ -10,11 +10,11 @@ public class HitScript : MonoBehaviour
         if (other.CompareTag("Enemy"))
         {
             GameObject hitEffect = Instantiate(HitParticle, transform.position, transform.rotation);
-            GameObject hit_monster = other.gameObject;
-            EnemyAttribute stat = hit_monster.GetComponent<EnemyAttribute>();
+            GameObject hitEnemy = other.gameObject;
+            EnemyAttribute stat = hitEnemy.GetComponent<EnemyAttribute>();
             stat.GetHit();
             Debug.Log("Hit Enemy" + other.name);
-            Destroy(gameObject);
+            Destroy(this.gameObject);
             Destroy(hitEffect, 2f);
         }
     }
