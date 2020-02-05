@@ -31,8 +31,9 @@ public class EnemyAttribute : MonoBehaviour
     {
         if (hp <= 0)
         {
-            this.gameObject.SetActive(false);
+            Destroy(gameObject);
             EnemyRespawn.monsterInField -= 1;
+            DropCoin();
             hp = maxHP;
         }
     }
@@ -48,6 +49,10 @@ public class EnemyAttribute : MonoBehaviour
         hp -=  totalDamage;
         Debug.Log("Hp Remaining" + hp);
         SettingAttribute();
+    }
+    public void DropCoin()
+    {
+        GameManager.currency += coinDrop;
     }
 
     void GetEnemyData()

@@ -7,7 +7,7 @@
         "turretdamage": 35,
         "turretdef": 20,
         "turretdistance": 15,
-        "turretfirerate": 3
+        "turretfirerate": 4
     },
     {
         "turretid": 2,
@@ -17,7 +17,7 @@
         "turretdamage": 50,
         "turretdef": 20,
         "turretdistance": 18,
-        "turretfirerate": 1
+        "turretfirerate": 1.5
     },
     {
         "turretid": 3,
@@ -26,7 +26,7 @@
         "turretmaxhp": 100,
         "turretdamage": 110,
         "turretdef": 20,
-        "turretdistance": 25,
-        "turretfirerate": 0.35
+        "turretdistance": 22,
+        "turretfirerate": 1
     }
 ]
