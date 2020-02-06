@@ -8,7 +8,7 @@
         "penetration": 0,
         "turretdef": 20,
         "turretdistance": 15,
-        "turretfirerate": 3.5
+        "turretfirerate": 3
     },
     {
         "turretid": 2,

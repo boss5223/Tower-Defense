@@ -10,8 +10,8 @@ public class EnemyAttribute : MonoBehaviour
     Animator anim;
     [Header("Attribute")]
     public int enemyId;
-    public int hp;
-    public int maxHP;
+    public float hp;
+    public float maxHP;
     public int damage;
     public int def;
     public float firerate;
@@ -21,10 +21,6 @@ public class EnemyAttribute : MonoBehaviour
     public GameObject healthBar;
     protected Image Bar;
     protected Image BarFilled;
-
-    [Header("GameObject")]
-    public GameObject spawn;
-    public GameObject node;
 
 
     void Start()
@@ -53,14 +49,14 @@ public class EnemyAttribute : MonoBehaviour
     }
     public void GetHit()
     {
-        int totalDamage = Turrets.instance.damage - (def - Turrets.instance.penetration);
+        float totalDamage = Turrets.instance.damage - (def - Turrets.instance.penetration);
         Debug.Log(totalDamage);
         if(totalDamage < 0)
         {
             totalDamage = 0;
         }
         hp -=  totalDamage;
-        Bar.fillAmount = hp;
+        BarFilled.fillAmount = hp/maxHP;
         Debug.Log("Hp Remaining" + hp);
         SettingAttribute();
     }
