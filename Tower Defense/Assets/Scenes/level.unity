@@ -2750,11 +2750,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 473642ad76b6c0047ade43e99314d8c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  standardTurretPrefab: {fileID: 4055833412150582227, guid: d5339becead1ac84281aa17cbc085b7d,
+  standardTurretPrefab: {fileID: 7873079968398570950, guid: 7886d3e2b18b94c4c8f67e54e7c1894e,
     type: 3}
-  anotherTurretPrefab: {fileID: 9035023200980106756, guid: 63d8f66fb649d4e41b59860fe04fc777,
+  anotherTurretPrefab: {fileID: 8042711744656688803, guid: af7dd4bda496fe64c8860ebc283def10,
     type: 3}
-  specialTurretPrefab: {fileID: 5860483337776152352, guid: 99f2859c17120d54f8909216769c2eec,
+  specialTurretPrefab: {fileID: 8026663369093520301, guid: 4c41263ee26f16d49a9d21ed190236ef,
     type: 3}
 --- !u!4 &1398615265
 Transform:
