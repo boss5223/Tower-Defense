@@ -10,7 +10,13 @@ public class UIManager : MonoBehaviour
     [Header("Text")]
     public Text Currency;
     public Text Time;
-    
+    public Text TowerPoints;
+    [Header("GameObject")]
+    public GameObject spawn;
+    public GameObject node;
+    public GameObject storage;
+    public GameObject particleStorage;
+
     void Start()
     {
         Gun1.onClick.AddListener(() => Shop.instance.PurchaseStandardTurrets());
@@ -21,6 +27,7 @@ public class UIManager : MonoBehaviour
     {
         UpdateCurrency();
         Updatetime();
+        UpdateTowerPoint();
     }
     void UpdateCurrency()
     {
@@ -33,6 +40,10 @@ public class UIManager : MonoBehaviour
         {
             Time.text = GameManager.timeIngame.ToString("0");
         }
+    }
+    void UpdateTowerPoint()
+    {
+        TowerPoints.text = GameManager.towerPoint.ToString();
     }
     
 

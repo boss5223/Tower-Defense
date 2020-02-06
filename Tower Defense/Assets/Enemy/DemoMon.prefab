@@ -153,6 +153,7 @@ GameObject:
   - component: {fileID: 6193261729783030450}
   - component: {fileID: 8143065539267264413}
   - component: {fileID: 5188936185055655127}
+  - component: {fileID: 8734674283701804023}
   m_Layer: 0
   m_Name: DemoMon
   m_TagString: Enemy
@@ -244,6 +245,18 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1
   m_Center: {x: 0, y: 0.5, z: 0.2}
+--- !u!114 &8734674283701804023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2631961003728484662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3288408b719404441a6d8cab3421401b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2894317484284010957
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4499034100724729355}
   - component: {fileID: 2047773868995441883}
   - component: {fileID: 487614819789122104}
+  - component: {fileID: 2316031279183246517}
   m_Layer: 0
   m_Name: Aggressive
   m_TagString: Enemy
@@ -129,3 +130,17 @@ MonoBehaviour:
   firerate: 0
   movespd: 0
   coinDrop: 0
+  healthBar: {fileID: 2430884129390622951, guid: 748b2c6b5cf6b7341914ff40e639958f,
+    type: 3}
+--- !u!114 &2316031279183246517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7179057167663468167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3288408b719404441a6d8cab3421401b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

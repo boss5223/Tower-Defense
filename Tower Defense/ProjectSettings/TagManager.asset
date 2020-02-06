@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Enemy
   - Turrets
+  - CheckPoint
+  - Storage
+  - PS
   layers:
   - Default
   - TransparentFX

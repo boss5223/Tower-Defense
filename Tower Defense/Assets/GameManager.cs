@@ -8,10 +8,12 @@ public class GameManager : MonoBehaviour
     public static float timeUp;
     public static float timeIngame;
     public static float prepairingTime;
+    public static int towerPoint;
     void Start()
     {
         prepairingTime = 5f;
         timeIngame = 90f;
+        towerPoint = 20;
     }
 
     void Update()
@@ -22,16 +24,8 @@ public class GameManager : MonoBehaviour
             CountTimeup();
             CountTimeGame();
         }
-        if(timeIngame <= 0)
-        {
-            timeIngame = 0;
-            //EndGame;
-        }
-        if(timeUp >= 1)
-        {
-            currency += 5;
-            timeUp = 0;
-        }
+        TimeControl();
+        SetTowerPoint();
     }
     void CountPreTime()
     {
@@ -44,5 +38,25 @@ public class GameManager : MonoBehaviour
     void CountTimeGame()
     {
         timeIngame -= Time.deltaTime;
+    }
+    void TimeControl()
+    {
+        if (timeIngame <= 0)
+        {
+            timeIngame = 0;
+            //EndGame;
+        }
+        if (timeUp >= 1)
+        {
+            currency += 5;
+            timeUp = 0;
+        }
+    }
+    void SetTowerPoint()
+    {
+        if (towerPoint < 0)
+        {
+            towerPoint = 0;
+        }
     }
 }

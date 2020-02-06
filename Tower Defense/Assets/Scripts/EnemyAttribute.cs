@@ -21,7 +21,11 @@ public class EnemyAttribute : MonoBehaviour
     public GameObject healthBar;
     protected Image Bar;
     protected Image BarFilled;
-    // Start is called before the first frame update
+
+    [Header("GameObject")]
+    public GameObject spawn;
+    public GameObject node;
+
 
     void Start()
     {
@@ -49,7 +53,6 @@ public class EnemyAttribute : MonoBehaviour
     }
     public void GetHit()
     {
-        //anim.SetTrigger("Hurt");
         int totalDamage = Turrets.instance.damage - (def - Turrets.instance.penetration);
         Debug.Log(totalDamage);
         if(totalDamage < 0)
@@ -59,6 +62,11 @@ public class EnemyAttribute : MonoBehaviour
         hp -=  totalDamage;
         Bar.fillAmount = hp;
         Debug.Log("Hp Remaining" + hp);
+        SettingAttribute();
+    }
+    public void GetCheckPoint()
+    {
+        hp = 0;
         SettingAttribute();
     }
     public void DropCoin()

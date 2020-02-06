@@ -16,6 +16,7 @@ public class Turrets : MonoBehaviour
     [Header("Prefab")]
     public GameObject bulletPrefab;
     public GameObject firePoint;
+    public GameObject storage;
 
     private Transform target;
     private float firerate;
@@ -32,6 +33,7 @@ public class Turrets : MonoBehaviour
     }
     void Start()
     {
+        storage = GameObject.FindGameObjectWithTag("Storage");
         GetTurretsData();
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
     }
@@ -78,6 +80,7 @@ public class Turrets : MonoBehaviour
     void Shoot()
     {
         GameObject bullet = Instantiate(bulletPrefab, firePoint.transform.position, transform.rotation);
+        bullet.transform.SetParent(storage.transform);
         Bullet bulletScript = bullet.GetComponent<Bullet>();
         if(bullet != null)
         {
@@ -112,5 +115,9 @@ public class Turrets : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, range);
+    }
+    public void SetParent(Transform parent)
+    {
+        transform.parent = parent;
     }
 }
