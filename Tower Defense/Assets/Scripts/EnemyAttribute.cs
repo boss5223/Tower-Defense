@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyAttribute : MonoBehaviour
 {
     // Start is called before the first frame update
     [HideInInspector]public bool isDead = false;
     Animator anim;
+    [Header("Attribute")]
     public int enemyId;
     public int hp;
     public int maxHP;
@@ -15,16 +17,23 @@ public class EnemyAttribute : MonoBehaviour
     public float firerate;
     public float movespd;
     public int coinDrop;
+    [Header("Health Bar")]
+    public GameObject healthBar;
+    protected Image Bar;
+    protected Image BarFilled;
     // Start is called before the first frame update
 
     void Start()
     {
-        //level = FindObjectOfType<SetUIManager>().level;
+        Bar = Instantiate(healthBar, FindObjectOfType<Canvas>().transform).GetComponent<Image>();
+        BarFilled = new List<Image>(Bar.GetComponentsInChildren<Image>()).Find(img => img != Bar);
         GetEnemyData();
         anim = GetComponent<Animator>();
     }
-    void FixedUpdate()
+    void Update()
     {
+        Vector3 unitposition = new Vector3(transform.position.x, transform.position.y + 3f, transform.position.z);
+        Bar.transform.position = Camera.main.WorldToScreenPoint(unitposition);
         SettingAttribute();
     }
     public void SettingAttribute()
@@ -32,6 +41,7 @@ public class EnemyAttribute : MonoBehaviour
         if (hp <= 0)
         {
             Destroy(gameObject);
+            Destroy(Bar.gameObject);
             EnemyRespawn.monsterInField -= 1;
             DropCoin();
             hp = maxHP;
@@ -40,13 +50,14 @@ public class EnemyAttribute : MonoBehaviour
     public void GetHit()
     {
         //anim.SetTrigger("Hurt");
-        int totalDamage = Turrets.instance.damage - def;
+        int totalDamage = Turrets.instance.damage - (def - Turrets.instance.penetration);
         Debug.Log(totalDamage);
         if(totalDamage < 0)
         {
             totalDamage = 0;
         }
         hp -=  totalDamage;
+        Bar.fillAmount = hp;
         Debug.Log("Hp Remaining" + hp);
         SettingAttribute();
     }

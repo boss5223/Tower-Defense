@@ -15,13 +15,13 @@
         "enemyid": 2,
         "enemyname": "aggressiveEnemy",
         "enemytype": "normal",
-        "enemyhp": 100,
-        "enemymaxhp": 100,
+        "enemyhp": 120,
+        "enemymaxhp": 12,
         "enemydamage": 20,
         "enemydefense": 20,
         "enemymovespd": 1.5,
         "enemyfirerate": 1.5,
-        "enemycoindrop": 30
+        "enemycoindrop": 20
     },
     {
         "enemyid": 3,
@@ -33,16 +33,16 @@
         "enemydefense": 30,
         "enemymovespd": 2,
         "enemyfirerate": 1.5,
-        "enemycoindrop": 45
+        "enemycoindrop": 30
     },
     {
         "enemyid": 4,
         "enemyname": "Boss",
         "enemytype": "Boss",
-        "enemyhp": 300,
-        "enemymaxhp": 250,
+        "enemyhp": 400,
+        "enemymaxhp": 400,
         "enemydamage": 50,
-        "enemydefense": 30,
+        "enemydefense": 50,
         "enemymovespd": 1.5,
         "enemyfirerate": 2,
         "enemycoindrop": 150

@@ -12,6 +12,7 @@ public class Turrets : MonoBehaviour
     public Transform partToRotate;
     public float rotateSpeed = 10f;
     public int damage;
+    public int penetration;
     [Header("Prefab")]
     public GameObject bulletPrefab;
     public GameObject firePoint;
@@ -103,6 +104,7 @@ public class Turrets : MonoBehaviour
                 range = turretsData[i].turretDistance;
                 firerate = turretsData[i].turretFirerate;
                 damage = turretsData[i].turretDamage;
+                penetration = turretsData[i].penetration;
             }
         }
     }

@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         prepairingTime = 5f;
-        timeIngame = 60f;
+        timeIngame = 90f;
     }
 
     void Update()
