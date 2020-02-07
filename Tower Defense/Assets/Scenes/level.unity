@@ -272,7 +272,7 @@ PrefabInstance:
     - target: {fileID: 4274383533064594417, guid: e9c2c33805b59b444aaa90a091e44541,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.29
+      value: -4.8
       objectReference: {fileID: 0}
     - target: {fileID: 4274383533064594417, guid: e9c2c33805b59b444aaa90a091e44541,
         type: 3}
@@ -2994,6 +2994,8 @@ MonoBehaviour:
   Currency: {fileID: 1547448163}
   Time: {fileID: 585469161}
   TowerPoints: {fileID: 1785718525}
+  winPanel: {fileID: 310749513}
+  losePanel: {fileID: 1054247886}
   spawn: {fileID: 1727310828}
   node: {fileID: 1608387174}
   storage: {fileID: 1677156704}
@@ -3095,7 +3097,7 @@ PrefabInstance:
     - target: {fileID: 4274383533064594417, guid: e9c2c33805b59b444aaa90a091e44541,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.71
+      value: 3.1
       objectReference: {fileID: 0}
     - target: {fileID: 4274383533064594417, guid: e9c2c33805b59b444aaa90a091e44541,
         type: 3}
@@ -4295,7 +4297,7 @@ PrefabInstance:
     - target: {fileID: 4274383533064594417, guid: e9c2c33805b59b444aaa90a091e44541,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -13.21
+      value: -12.5
       objectReference: {fileID: 0}
     - target: {fileID: 4274383533064594417, guid: e9c2c33805b59b444aaa90a091e44541,
         type: 3}

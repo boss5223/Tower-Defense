@@ -11,20 +11,27 @@ public class UIManager : MonoBehaviour
     public Text Currency;
     public Text Time;
     public Text TowerPoints;
+    [Header("Panel")]
+    public GameObject winPanel;
+    public GameObject losePanel;
     [Header("GameObject")]
     public GameObject spawn;
     public GameObject node;
     public GameObject storage;
     public GameObject particleStorage;
-
+    private EnemyAttribute enemyAttribute;
     void Start()
     {
+        winPanel.SetActive(false);
+        losePanel.SetActive(false);
+        enemyAttribute = GetComponent<EnemyAttribute>();
         Gun1.onClick.AddListener(() => Shop.instance.PurchaseStandardTurrets());
         Gun2.onClick.AddListener(() => Shop.instance.PurchaseAnotherTurrets());
         Gun3.onClick.AddListener(() => Shop.instance.PurchaseSpecialTurrets());
     }
     void Update()
     {
+        SetEndPanel();
         UpdateCurrency();
         Updatetime();
         UpdateTowerPoint();
@@ -45,6 +52,31 @@ public class UIManager : MonoBehaviour
     {
         TowerPoints.text = GameManager.towerPoint.ToString();
     }
-    
+    void SetEndPanel()
+    {
+        if (GameManager.timeIngame <= 0 && GameManager.towerPoint > 0)
+        {
+            winPanel.SetActive(true);
+            losePanel.SetActive(false);
+            spawn.SetActive(false);
+            node.SetActive(false);
+            storage.SetActive(false);
+            particleStorage.SetActive(false);
+            GameObject bar = GameObject.FindGameObjectWithTag("Bar");
+            Destroy(bar);
+            
+        }
+        else if (GameManager.towerPoint <= 0)
+        {
+            losePanel.SetActive(true);
+            winPanel.SetActive(false);
+            spawn.SetActive(false);
+            node.SetActive(false);
+            storage.SetActive(false);
+            particleStorage.SetActive(false);
+            GameObject bar = GameObject.FindGameObjectWithTag("Bar");
+            Destroy(bar);
 
+        }
+    }
 }

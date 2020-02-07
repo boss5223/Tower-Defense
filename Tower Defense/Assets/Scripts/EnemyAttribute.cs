@@ -19,8 +19,10 @@ public class EnemyAttribute : MonoBehaviour
     public int coinDrop;
     [Header("Health Bar")]
     public GameObject healthBar;
-    protected Image Bar;
-    protected Image BarFilled;
+    [HideInInspector]public Image Bar;
+    [HideInInspector]public Image BarFilled;
+    [Header("Storage")]
+    public  GameObject[] AllBar;
 
 
     void Start()
@@ -88,5 +90,9 @@ public class EnemyAttribute : MonoBehaviour
             }
         }
 
+    }
+    public void SetParent(Transform parent)
+    {
+        transform.parent = parent;
     }
 }

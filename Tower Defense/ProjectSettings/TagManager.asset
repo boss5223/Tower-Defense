@@ -9,6 +9,7 @@ TagManager:
   - CheckPoint
   - Storage
   - PS
+  - Bar
   layers:
   - Default
   - TransparentFX
