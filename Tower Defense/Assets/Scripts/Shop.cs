@@ -22,7 +22,7 @@ public class Shop : MonoBehaviour
     public void PurchaseAnotherTurrets()
     {
         Debug.Log("PurchaseAnotherTurrets Success");
-        BuildManager.instance.SetTurretsToBuild(BuildManager.instance.anotherTurretPrefab,200);
+        BuildManager.instance.SetTurretsToBuild(BuildManager.instance.anotherTurretPrefab,300);
     }
     public void PurchaseSpecialTurrets()
     {

@@ -2752,9 +2752,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   standardTurretPrefab: {fileID: 5498746611177231788, guid: 7354c06675790c74994730f64dc6924f,
     type: 3}
-  anotherTurretPrefab: {fileID: 8042711744656688803, guid: af7dd4bda496fe64c8860ebc283def10,
+  anotherTurretPrefab: {fileID: 6294102562597088574, guid: 1a1576c7982561848b85f2d06b61267f,
     type: 3}
-  specialTurretPrefab: {fileID: 8026663369093520301, guid: 4c41263ee26f16d49a9d21ed190236ef,
+  specialTurretPrefab: {fileID: 853868466258570920, guid: 7d26ae523e8e8d64a94d4a589c5d3b32,
     type: 3}
 --- !u!4 &1398615265
 Transform:
