@@ -10,6 +10,7 @@ TagManager:
   - Storage
   - PS
   - Bar
+  - Bullet
   layers:
   - Default
   - TransparentFX

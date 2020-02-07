@@ -4,47 +4,43 @@ using UnityEngine;
 
 public class Turrets : MonoBehaviour
 {
-    public static Turrets instance;
-
     [Header("Attribute")]
-    public int turretsID;
+    public string turretsID;
     public float range;
     public Transform partToRotate;
     public float rotateSpeed = 10f;
-    public int damage;
-    public int penetration;
+    public float damage;
+    public float penetration;
     [Header("Prefab")]
     public GameObject bulletPrefab;
-    public GameObject firePoint;
+    public GameObject[] firePoint;
     public GameObject storage;
-
     private Transform target;
-    private float firerate;
+    public float firerate;
     private float firerateCount =0;
-    
+    private GameObject bullet;
+    private List<TurretsBuild> turretsBuilds;
 
-    void Awake()
-    {
-        if(instance != null)
-        {
-            return;
-        }
-        instance = this;
-    }
+
+
     void Start()
     {
         storage = GameObject.FindGameObjectWithTag("Storage");
-        GetTurretsData();
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
     }
 
     void Update()
     {
-        if(target == null)
+        if (target == null)
         {
             return;
         }
-        UpdateTarget();
+        if (firerateCount <= 0)
+        {
+            Shoot();
+            firerateCount = 1f / firerate;
+        }
+        firerateCount -= Time.deltaTime;
         TargetOnLock();
     }
     void UpdateTarget()
@@ -69,22 +65,21 @@ public class Turrets : MonoBehaviour
         {
             return;
         }
-        if(firerateCount <=0)
-        {
-            Shoot();
-            firerateCount = 1f / firerate;
-        }
-        firerateCount -= Time.deltaTime;
+      
     }
 
     void Shoot()
     {
-        GameObject bullet = Instantiate(bulletPrefab, firePoint.transform.position, transform.rotation);
+        for (int i = 0; i < firePoint.Length; i++)
+        {
+            bullet = Instantiate(bulletPrefab, firePoint[i].transform.position, transform.rotation);
+        }
         bullet.transform.SetParent(storage.transform);
         Bullet bulletScript = bullet.GetComponent<Bullet>();
-        if(bullet != null)
+        if (bullet != null)
         {
             bulletScript.FindTarget(target);
+            return;
         }
     }
     
@@ -96,21 +91,6 @@ public class Turrets : MonoBehaviour
         partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
     }
 
-    void GetTurretsData()
-    {
-        var turretsData = TurretsDataContainer.Instance.GetTurretsData();
-        Debug.Log(turretsData);
-        for (int i = 0; i < turretsData.Count; i++)
-        {
-            if (turretsData[i].turretID == turretsID)
-            {
-                range = turretsData[i].turretDistance;
-                firerate = turretsData[i].turretFirerate;
-                damage = turretsData[i].turretDamage;
-                penetration = turretsData[i].penetration;
-            }
-        }
-    }
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;

@@ -12,8 +12,8 @@ public class EnemyAttribute : MonoBehaviour
     public int enemyId;
     public float hp;
     public float maxHP;
-    public int damage;
-    public int def;
+    public float enemyDamage;
+    public float enemyDef;
     public float firerate;
     public float movespd;
     public int coinDrop;
@@ -21,9 +21,6 @@ public class EnemyAttribute : MonoBehaviour
     public GameObject healthBar;
     [HideInInspector]public Image Bar;
     [HideInInspector]public Image BarFilled;
-    [Header("Storage")]
-    public  GameObject[] AllBar;
-
 
     void Start()
     {
@@ -49,15 +46,15 @@ public class EnemyAttribute : MonoBehaviour
             hp = maxHP;
         }
     }
-    public void GetHit()
+    public void GetHit(float damage, float penetration)
     {
-        float totalDamage = Turrets.instance.damage - (def - Turrets.instance.penetration);
+        float totalDamage = damage - (enemyDef - penetration);
         Debug.Log(totalDamage);
-        if(totalDamage < 0)
+        if (totalDamage < 0)
         {
             totalDamage = 0;
         }
-        hp -=  totalDamage;
+        hp -= totalDamage;
         BarFilled.fillAmount = hp/maxHP;
         Debug.Log("Hp Remaining" + hp);
         SettingAttribute();
@@ -82,8 +79,8 @@ public class EnemyAttribute : MonoBehaviour
             {
                 hp = enemyData[i].enemyHP;
                 maxHP = enemyData[i].enemyMaxHP;
-                damage = enemyData[i].enemyDamage;
-                def = enemyData[i].enemyDefense;
+                enemyDamage = enemyData[i].enemyDamage;
+                enemyDef = enemyData[i].enemyDefense;
                 movespd = enemyData[i].enemyMoveSpd;
                 firerate = enemyData[i].enemyFirerate;
                 coinDrop = enemyData[i].enemyCoinDrop;

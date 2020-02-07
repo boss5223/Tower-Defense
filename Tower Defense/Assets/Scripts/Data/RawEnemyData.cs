@@ -5,8 +5,8 @@
     public string enemyType;
     public float enemyHP;
     public float enemyMaxHP;
-    public int enemyDamage;
-    public int enemyDefense;
+    public float enemyDamage;
+    public float enemyDefense;
     public float enemyMoveSpd;
     public float enemyFirerate;
     public int enemyCoinDrop;

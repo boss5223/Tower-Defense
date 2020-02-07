@@ -2,15 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HitScript : MonoBehaviour
+public class HitScript : Turrets
 {
     public GameObject HitParticle;
-    public GameObject storage;
+    
     void Start()
     {
-        storage = GameObject.FindGameObjectWithTag("PS");
+        GetTurretsData();
+        storage = GameObject.FindGameObjectWithTag("Storage");
     }
-    private void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Enemy"))
         {
@@ -18,14 +19,24 @@ public class HitScript : MonoBehaviour
             hitEffect.transform.SetParent(storage.transform);
             GameObject hitEnemy = other.gameObject;
             EnemyAttribute stat = hitEnemy.GetComponent<EnemyAttribute>();
-            stat.GetHit();
-            Debug.Log("Hit Enemy" + other.name);
-            Destroy(this.gameObject);
+            stat.GetHit(damage,penetration);
+            Destroy(gameObject);
             Destroy(hitEffect, 2f);
         }
     }
-    public void SetParent(Transform parent)
+    void GetTurretsData()
     {
-        transform.parent = parent;
+        var turretsData = TurretsDataContainer.Instance.GetTurretsData();
+        Debug.Log(turretsData);
+        for (int i = 0; i < turretsData.Count; i++)
+        {
+            if (turretsData[i].turretID == turretsID)
+            {
+                range = turretsData[i].turretDistance;
+                firerate = turretsData[i].turretFirerate;
+                damage = turretsData[i].turretDamage;
+                penetration = turretsData[i].penetration;
+            }
+        }
     }
 }

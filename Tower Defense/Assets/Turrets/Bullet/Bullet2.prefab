@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 2781537943940580184}
   m_Layer: 0
   m_Name: Bullet2
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -121,9 +121,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8926742dc60ad84469826f02c6d03606, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  turretsID: 2
+  range: 0
+  partToRotate: {fileID: 0}
+  rotateSpeed: 10
+  damage: 0
+  penetration: 0
+  bulletPrefab: {fileID: 0}
+  firePoint: []
+  storage: {fileID: 0}
+  firerate: 0
   HitParticle: {fileID: 7381159116500442672, guid: 66fb85bc1f1c6a74c9cffd7f1975cc50,
     type: 3}
-  storage: {fileID: 0}
 --- !u!54 &2781537943940580184
 Rigidbody:
   m_ObjectHideFlags: 0

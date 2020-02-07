@@ -228,6 +228,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6990287243335130925}
   - component: {fileID: -7756809757632816397}
+  - component: {fileID: 8983920699372422982}
+  - component: {fileID: 3458883038890489660}
   m_Layer: 0
   m_Name: tower2
   m_TagString: Turrets
@@ -264,14 +266,48 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turretsID: 2
+  range: 18
   partToRotate: {fileID: 4239964152113669911}
   rotateSpeed: 10
-  damage: 0
-  penetration: 0
+  damage: 45
+  penetration: 5
   bulletPrefab: {fileID: 826367506855969395, guid: 305c82e5c0212024384aa2ea45005269,
     type: 3}
-  firePoint: {fileID: 2249924025280706935}
+  firePoint:
+  - {fileID: 2249924025280706935}
+  - {fileID: 8599598269255852921}
+  - {fileID: 4755998077972243586}
   storage: {fileID: 0}
+  firerate: 1.5
+--- !u!65 &8983920699372422982
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6294102562597088574}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.2, y: 0.4, z: 0.2}
+  m_Center: {x: 0, y: 0.2, z: 0}
+--- !u!54 &3458883038890489660
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6294102562597088574}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &8048355189916802842
 GameObject:
   m_ObjectHideFlags: 0
