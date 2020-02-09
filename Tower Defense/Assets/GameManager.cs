@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public static int currency = 1200;
+    public static int currency = 200;
     public static float timeUp;
     public static float timeIngame;
     public static float prepairingTime;
     public static int towerPoint;
     void Start()
     {
+        Application.targetFrameRate = 60;
         prepairingTime = 5f;
         timeIngame = 90f;
         towerPoint = 20;
@@ -26,6 +27,10 @@ public class GameManager : MonoBehaviour
         }
         TimeControl();
         SetTowerPoint();
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
     }
     void CountPreTime()
     {

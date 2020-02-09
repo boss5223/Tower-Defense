@@ -28,14 +28,14 @@ public class Node : MonoBehaviour
         {
             return;
         }
-        if (turrets != null)
-        {
-            Debug.Log("Can't Build in this Place");
-        }
         GameObject turretsToBuild = BuildManager.instance.GetTurrentsToBuild();
         if(GameManager.currency < price)
         {
             Debug.LogError("Not Enough Money!!");
+        }
+        else if (turrets != null)
+        {
+            Debug.LogError("Can't Build in this Place");
         }
         else
         {
