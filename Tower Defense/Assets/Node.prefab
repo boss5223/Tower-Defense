@@ -108,7 +108,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorHover: {r: 0.38470095, g: 0.5240509, b: 0.8584906, a: 0.28235295}
-  positionOffset: {x: 0, y: 1.5, z: 0}
+  positionOffset: {x: 0, y: 0.3, z: 0}
 --- !u!54 &2624151619545389578
 Rigidbody:
   m_ObjectHideFlags: 0

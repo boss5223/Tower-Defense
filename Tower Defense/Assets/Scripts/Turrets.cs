@@ -4,26 +4,43 @@ using UnityEngine;
 
 public class Turrets : MonoBehaviour
 {
-    public int turretsID;
-    public float range = 16;
+    [Header("Attribute")]
+    public string turretsID;
+    public float range;
     public Transform partToRotate;
     public float rotateSpeed = 10f;
-
+    public float damage;
+    public float penetration;
+    [Header("Prefab")]
+    public GameObject bulletPrefab;
+    public GameObject[] firePoint;
+    public GameObject storage;
     private Transform target;
-    private float firerate;
-    private int damage;
+    public float firerate;
+    private float firerateCount =0;
+    private GameObject bullet;
+    private List<TurretsBuild> turretsBuilds;
+
+
+
     void Start()
     {
+        storage = GameObject.FindGameObjectWithTag("Storage");
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
     }
 
     void Update()
     {
-        if(target == null)
+        if (target == null)
         {
             return;
         }
-
+        if (firerateCount <= 0)
+        {
+            Shoot();
+            firerateCount = 1f / firerate;
+        }
+        firerateCount -= Time.deltaTime;
         TargetOnLock();
     }
     void UpdateTarget()
@@ -44,6 +61,26 @@ public class Turrets : MonoBehaviour
         {
             target = nearestEnemy.transform;
         }
+        else
+        {
+            return;
+        }
+      
+    }
+
+    void Shoot()
+    {
+        for (int i = 0; i < firePoint.Length; i++)
+        {
+            bullet = Instantiate(bulletPrefab, firePoint[i].transform.position, transform.rotation);
+        }
+        bullet.transform.SetParent(storage.transform);
+        Bullet bulletScript = bullet.GetComponent<Bullet>();
+        if (bullet != null)
+        {
+            bulletScript.FindTarget(target);
+            return;
+        }
     }
     
     void TargetOnLock()
@@ -54,23 +91,13 @@ public class Turrets : MonoBehaviour
         partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
     }
 
-    void GetTurretsData()
-    {
-        var turretsData = TurretsDataContainer.Instance.GetTurretsData();
-        Debug.Log(turretsData);
-        for (int i = 0; i < turretsData.Count; i++)
-        {
-            if (turretsData[i].turretID == turretsID)
-            {
-                range = turretsData[i].turretDistance;
-                firerate = turretsData[i].turretFirerate;
-                damage = turretsData[i].turretDamage;
-            }
-        }
-    }
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, range);
+    }
+    public void SetParent(Transform parent)
+    {
+        transform.parent = parent;
     }
 }

@@ -41,23 +41,8 @@ public class PoolManager : MonoBehaviour
             }
         }
     }
-    public void CreateParticle(GameObject prefab, int poolSize)
-    {
-        int poolKey = prefab.GetInstanceID();
-        if (!poolDictionary.ContainsKey(poolKey))
-        {
-            poolDictionary.Add(poolKey, new Queue<GameObject>());
 
-            for (int i = 0; i < poolSize; i++)
-            {
-                this.newObject = (Instantiate(prefab, this.transform) as GameObject);
-                newObject.SetActive(false);
-                poolDictionary[poolKey].Enqueue(newObject);
-                newObject.transform.SetParent(storage.transform);
-            }
-        }
-    }
-    public void ReusePool(GameObject prefab, Vector2 position , Quaternion rotation)
+    public void ReusePool(GameObject prefab, Vector3 position , Quaternion rotation)
     {
         int poolKey = prefab.GetInstanceID();
         if (poolDictionary.ContainsKey(poolKey))
@@ -71,27 +56,7 @@ public class PoolManager : MonoBehaviour
         }
     }
 
-    public void ReuseParticle(GameObject prefab, Vector2 position, Quaternion rotation)
-    {
-        
-        int poolKey = prefab.GetInstanceID();
-        if (poolDictionary.ContainsKey(poolKey))
-        {
-            GameObject objectToReuse = poolDictionary[poolKey].Dequeue();
-            poolDictionary[poolKey].Enqueue(objectToReuse);
-            objectToReuse.SetActive(true);
-            objectToReuse.transform.position = position;
-            objectToReuse.transform.rotation = rotation;
-            StartCoroutine(CloseParticle(objectToReuse));
 
-        }
-    }
-
-    IEnumerator CloseParticle(GameObject prefab)
-    {
-        yield return new WaitForSeconds(0.1f);
-        prefab.SetActive(false);
-    }
     //IEnumerator OpenParticle(GameObject prefab)
     //{
     //    yield return new WaitForSeconds(0.3f);

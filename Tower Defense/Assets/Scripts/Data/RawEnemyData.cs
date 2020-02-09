@@ -3,9 +3,11 @@
     public int enemyID;
     public string enemyName;
     public string enemyType;
-    public int enemyHP;
-    public int enemyMaxHP;
-    public int enemyDamage;
-    public int enemyDefense;
+    public float enemyHP;
+    public float enemyMaxHP;
+    public float enemyDamage;
+    public float enemyDefense;
+    public float enemyMoveSpd;
     public float enemyFirerate;
+    public int enemyCoinDrop;
 }

@@ -3,7 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
+  - Turrets
+  - CheckPoint
+  - Storage
+  - PS
+  - Bar
+  - Bullet
   layers:
   - Default
   - TransparentFX

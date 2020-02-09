@@ -5,6 +5,7 @@ public class Node : MonoBehaviour
 {
     public Color colorHover;
     public Vector3 positionOffset;
+    public GameObject storage;
 
     private Renderer rend;
     private Color startColor;
@@ -12,6 +13,7 @@ public class Node : MonoBehaviour
     private int price;
     void Start()
     {
+        storage = GameObject.FindGameObjectWithTag("Storage");
         rend = GetComponent<Renderer>();
         startColor = rend.material.color;
     }
@@ -26,18 +28,19 @@ public class Node : MonoBehaviour
         {
             return;
         }
-        if (turrets != null)
-        {
-            Debug.Log("Can't Build in this Place");
-        }
         GameObject turretsToBuild = BuildManager.instance.GetTurrentsToBuild();
         if(GameManager.currency < price)
         {
             Debug.LogError("Not Enough Money!!");
         }
+        else if (turrets != null)
+        {
+            Debug.LogError("Can't Build in this Place");
+        }
         else
         {
             turrets = Instantiate(turretsToBuild, transform.position + positionOffset, transform.rotation);
+            turrets.transform.SetParent(storage.transform);
             GetPayment();
         }
     }
@@ -64,5 +67,9 @@ public class Node : MonoBehaviour
         {
             GameManager.currency = 0;
         }
+    }
+    public void SetParent(Transform parent)
+    {
+        transform.parent = parent;
     }
 }
