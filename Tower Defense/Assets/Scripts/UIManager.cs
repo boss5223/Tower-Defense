@@ -7,6 +7,7 @@ public class UIManager : MonoBehaviour
     public Button Gun1;
     public Button Gun2;
     public Button Gun3;
+    private Button Sell;
     [Header("Text")]
     public Text Currency;
     public Text Time;
@@ -20,6 +21,8 @@ public class UIManager : MonoBehaviour
     public GameObject storage;
     public GameObject particleStorage;
     private EnemyAttribute enemyAttribute;
+    private GameObject towerToSell;
+
     void Start()
     {
         winPanel.SetActive(false);
@@ -28,6 +31,7 @@ public class UIManager : MonoBehaviour
         Gun1.onClick.AddListener(() => Shop.instance.PurchaseStandardTurrets());
         Gun2.onClick.AddListener(() => Shop.instance.PurchaseAnotherTurrets());
         Gun3.onClick.AddListener(() => Shop.instance.PurchaseSpecialTurrets());
+        Sell.onClick.AddListener(() => DestroyTower());
     }
     void Update()
     {
@@ -78,5 +82,11 @@ public class UIManager : MonoBehaviour
             Destroy(bar);
 
         }
+    }
+    void DestroyTower()
+    {
+        Debug.LogError("Sell woi");
+        towerToSell = FindObjectOfType<Turrets>().GetComponent<GameObject>();
+        Destroy(towerToSell);
     }
 }

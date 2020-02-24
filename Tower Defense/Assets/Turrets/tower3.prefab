@@ -65,6 +65,8 @@ MonoBehaviour:
   firePoint:
   - {fileID: 7201811288346349243}
   storage: {fileID: 0}
+  Sell: {fileID: 8750962814164581891, guid: 97d7b4d19150e5547a5fe20a2293e4b5, type: 3}
+  SellButton: {fileID: 0}
   firerate: 1
 --- !u!65 &-119169934871855646
 BoxCollider:

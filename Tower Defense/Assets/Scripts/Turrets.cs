@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class Turrets : MonoBehaviour
+public class Turrets : SellTower
 {
+   
     [Header("Attribute")]
     public string turretsID;
     public float range;
@@ -15,13 +17,15 @@ public class Turrets : MonoBehaviour
     public GameObject bulletPrefab;
     public GameObject[] firePoint;
     public GameObject storage;
+    public GameObject Sell;
+    public static GameObject sellState;
+    public static GameObject turretsell;
+    [HideInInspector]public Button SellButton;
     private Transform target;
     public float firerate;
     private float firerateCount =0;
     private GameObject bullet;
     private List<TurretsBuild> turretsBuilds;
-
-
 
     void Start()
     {
@@ -31,17 +35,15 @@ public class Turrets : MonoBehaviour
 
     void Update()
     {
+        SellButtonPosition();
         if (target == null)
         {
             return;
         }
-        if (firerateCount <= 0)
-        {
-            Shoot();
-            firerateCount = 1f / firerate;
-        }
-        firerateCount -= Time.deltaTime;
+        FirerateCount();
         TargetOnLock();
+        sellState = GameObject.Find("DestroyTurrets"+"(Clone)"); 
+       
     }
     void UpdateTarget()
     {
@@ -67,6 +69,30 @@ public class Turrets : MonoBehaviour
         }
       
     }
+    void FirerateCount()
+    {
+        if (firerateCount <= 0)
+        {
+            Shoot();
+            firerateCount = 1f / firerate;
+        }
+        firerateCount -= Time.deltaTime;
+    }
+    
+    void SellButtonPosition()
+    {
+        if (SellButton != null)
+        {
+         Vector3 unitposition = new Vector3(transform.position.x-5, transform.position.y + 7f, transform.position.z);
+         SellButton.transform.position = Camera.main.WorldToScreenPoint(unitposition);
+        }
+       
+    }
+    public void FinishSellTurrets()
+    {
+        Debug.Log("Sell Turret");
+        
+    }
 
     void Shoot()
     {
@@ -91,6 +117,17 @@ public class Turrets : MonoBehaviour
         partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
     }
 
+    public override void OnMouseDown()
+    {
+        if (sellState != null)
+        {
+            Debug.LogError("sellState is exist");
+        }
+        else
+        {
+            SellButton = Instantiate(Sell, FindObjectOfType<Canvas>().transform).GetComponent<Button>();
+        }
+    }
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;

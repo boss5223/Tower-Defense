@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Node : MonoBehaviour
+public class Node : SellTower
 {
     public Color colorHover;
     public Vector3 positionOffset;
@@ -22,7 +22,7 @@ public class Node : MonoBehaviour
         price = BuildManager.instance.GetPaymentTurrets();
     }
 
-    void OnMouseDown()
+    public override void OnMouseDown()
     {
         if (EventSystem.current.IsPointerOverGameObject())
         {

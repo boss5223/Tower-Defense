@@ -278,6 +278,8 @@ MonoBehaviour:
   - {fileID: 8599598269255852921}
   - {fileID: 4755998077972243586}
   storage: {fileID: 0}
+  Sell: {fileID: 8750962814164581891, guid: 97d7b4d19150e5547a5fe20a2293e4b5, type: 3}
+  SellButton: {fileID: 0}
   firerate: 1.5
 --- !u!65 &8983920699372422982
 BoxCollider:
