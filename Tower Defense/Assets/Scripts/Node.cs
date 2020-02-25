@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Node : SellTower
+public class Node : CancelSellButton
 {
     public Color colorHover;
     public Vector3 positionOffset;
