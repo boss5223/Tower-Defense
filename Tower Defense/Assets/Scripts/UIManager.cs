@@ -31,7 +31,7 @@ public class UIManager : MonoBehaviour
         Gun1.onClick.AddListener(() => Shop.instance.PurchaseStandardTurrets());
         Gun2.onClick.AddListener(() => Shop.instance.PurchaseAnotherTurrets());
         Gun3.onClick.AddListener(() => Shop.instance.PurchaseSpecialTurrets());
-        Sell.onClick.AddListener(() => DestroyTower());
+        //Sell.onClick.AddListener(() => DestroyTower());
     }
     void Update()
     {
@@ -83,10 +83,5 @@ public class UIManager : MonoBehaviour
 
         }
     }
-    void DestroyTower()
-    {
-        Debug.LogError("Sell woi");
-        towerToSell = FindObjectOfType<Turrets>().GetComponent<GameObject>();
-        Destroy(towerToSell);
-    }
+ 
 }
