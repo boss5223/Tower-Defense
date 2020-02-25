@@ -60,14 +60,16 @@ MonoBehaviour:
   rotateSpeed: 10
   damage: 110
   penetration: 20
-  bulletPrefab: {fileID: 849285893342273299, guid: f0c0560bfa5f7cf43ae0cf6aefb17396,
+  bulletPrefab: {fileID: 7516430321065112551, guid: ef14ed3479517814c9a4977b3cb99a4a,
     type: 3}
   firePoint:
   - {fileID: 7201811288346349243}
   storage: {fileID: 0}
   Sell: {fileID: 8750962814164581891, guid: 97d7b4d19150e5547a5fe20a2293e4b5, type: 3}
   SellButton: {fileID: 0}
-  firerate: 1
+  firerate: 0.5
+  enemyDead: 0
+  nearestEnemy: {fileID: 0}
 --- !u!65 &-119169934871855646
 BoxCollider:
   m_ObjectHideFlags: 0

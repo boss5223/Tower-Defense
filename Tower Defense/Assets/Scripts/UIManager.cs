@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
@@ -31,6 +32,8 @@ public class UIManager : MonoBehaviour
         Gun1.onClick.AddListener(() => Shop.instance.PurchaseStandardTurrets());
         Gun2.onClick.AddListener(() => Shop.instance.PurchaseAnotherTurrets());
         Gun3.onClick.AddListener(() => Shop.instance.PurchaseSpecialTurrets());
+        
+
         //Sell.onClick.AddListener(() => DestroyTower());
     }
     void Update()

@@ -26,10 +26,10 @@
         "turretname": "LaserMachine",
         "turrethp": 100,
         "turretmaxhp": 100,
-        "turretdamage": 110,
+        "turretdamage": 90,
         "penetration": 20,
         "turretdef": 20,
         "turretdistance": 20,
-        "turretfirerate": 1
+        "turretfirerate": 0.5
     }
 ]

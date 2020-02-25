@@ -12,10 +12,9 @@ GameObject:
   - component: {fileID: 8750962814164581951}
   - component: {fileID: 8750962814164581888}
   - component: {fileID: 8750962814164581889}
-  - component: {fileID: 2737740969001449632}
   m_Layer: 5
   m_Name: DestroyTurrets
-  m_TagString: Untagged
+  m_TagString: SB
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -119,18 +118,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &2737740969001449632
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8750962814164581891}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9334d6533cf4c5241a629f3f1c6aaa66, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &8750962815154826573
 GameObject:
   m_ObjectHideFlags: 0

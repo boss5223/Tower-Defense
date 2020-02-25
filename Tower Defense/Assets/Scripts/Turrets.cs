@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class Turrets : CancelSellButton
@@ -26,6 +27,8 @@ public class Turrets : CancelSellButton
     private float firerateCount =0;
     private GameObject bullet;
     private List<TurretsBuild> turretsBuilds;
+    [HideInInspector]public bool enemyDead = false;
+    [HideInInspector]public GameObject nearestEnemy;
 
     void Start()
     {
@@ -42,14 +45,14 @@ public class Turrets : CancelSellButton
         }
         FirerateCount();
         TargetOnLock();
-        sellState = GameObject.Find("DestroyTurrets"+"(Clone)"); 
-       
+        sellState = GameObject.Find("DestroyTurrets"+"(Clone)");
+        CreateSellButton();
     }
-    void UpdateTarget()
+    public void UpdateTarget()
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         float shortestDistance = Mathf.Infinity;
-        GameObject nearestEnemy = null;
+        nearestEnemy = null;
         foreach (GameObject enemy in enemies)
         {
             float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
@@ -67,7 +70,10 @@ public class Turrets : CancelSellButton
         {
             return;
         }
-      
+        //if(nearestEnemy.GetComponent<EnemyAttribute>().hp <= 0)
+        //{
+        //    enemyDead = true;
+        //}
     }
     void FirerateCount()
     {
@@ -96,17 +102,25 @@ public class Turrets : CancelSellButton
 
     void Shoot()
     {
-        for (int i = 0; i < firePoint.Length; i++)
+        if (nearestEnemy.GetComponent<EnemyAttribute>().hp <= 0)
         {
-            bullet = Instantiate(bulletPrefab, firePoint[i].transform.position, transform.rotation);
+            UpdateTarget();
         }
-        bullet.transform.SetParent(storage.transform);
-        Bullet bulletScript = bullet.GetComponent<Bullet>();
-        if (bullet != null)
+        else
         {
-            bulletScript.FindTarget(target);
-            return;
+            for (int i = 0; i < firePoint.Length; i++)
+            {
+                bullet = Instantiate(bulletPrefab, firePoint[i].transform.position, transform.rotation);
+            }
+            bullet.transform.SetParent(storage.transform);
+            Bullet bulletScript = bullet.GetComponent<Bullet>();
+            if (bullet != null)
+            {
+                bulletScript.FindTarget(target);
+                return;
+            }
         }
+
     }
     
     void TargetOnLock()
@@ -126,6 +140,21 @@ public class Turrets : CancelSellButton
         else
         {
             SellButton = Instantiate(Sell, FindObjectOfType<Canvas>().transform).GetComponent<Button>();
+        }
+    }
+    void CreateSellButton()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            RaycastHit hit;
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out hit)) 
+            {
+                if (hit.collider.tag == "SB")
+                    {
+                   
+                }
+            }              
         }
     }
     void OnDrawGizmosSelected()

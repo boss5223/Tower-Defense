@@ -8,7 +8,7 @@ public class SellButton : MonoBehaviour
     public Button soldTower;
     void Start()
     {
-        soldTower.onClick.AddListener(() => SellManager.instance.SellTower());
+        //soldTower.onClick.AddListener(() => SellManager.instance.SellTower());
     }
     void Update()
     {

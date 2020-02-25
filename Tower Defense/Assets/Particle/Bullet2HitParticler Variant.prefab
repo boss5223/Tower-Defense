@@ -62,6 +62,106 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8568469901025056934, guid: 8ce675268c7b59846ab97496defa31fe,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.4138483
+      objectReference: {fileID: 0}
+    - target: {fileID: 8568469901025056934, guid: 8ce675268c7b59846ab97496defa31fe,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.8532604
+      objectReference: {fileID: 0}
+    - target: {fileID: 8568469901025056934, guid: 8ce675268c7b59846ab97496defa31fe,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.9433962
+      objectReference: {fileID: 0}
+    - target: {fileID: 8568469901025056934, guid: 8ce675268c7b59846ab97496defa31fe,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.a
+      value: 0.74509805
+      objectReference: {fileID: 0}
+    - target: {fileID: 8568469901025056934, guid: 8ce675268c7b59846ab97496defa31fe,
+        type: 3}
+      propertyPath: ShapeModule.type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8568469901025056934, guid: 8ce675268c7b59846ab97496defa31fe,
+        type: 3}
+      propertyPath: ColorModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8568469901025056934, guid: 8ce675268c7b59846ab97496defa31fe,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key0.r
+      value: 0.49733
+      objectReference: {fileID: 0}
+    - target: {fileID: 8568469901025056934, guid: 8ce675268c7b59846ab97496defa31fe,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key0.g
+      value: 0.754695
+      objectReference: {fileID: 0}
+    - target: {fileID: 8568469901025056934, guid: 8ce675268c7b59846ab97496defa31fe,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key0.b
+      value: 0.8301887
+      objectReference: {fileID: 0}
+    - target: {fileID: 8568469901025056934, guid: 8ce675268c7b59846ab97496defa31fe,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8568469901025056934, guid: 8ce675268c7b59846ab97496defa31fe,
+        type: 3}
+      propertyPath: ColorModule.gradient.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8568469901025056934, guid: 8ce675268c7b59846ab97496defa31fe,
+        type: 3}
+      propertyPath: ColorModule.gradient.minGradient.key0.r
+      value: 0.19032574
+      objectReference: {fileID: 0}
+    - target: {fileID: 8568469901025056934, guid: 8ce675268c7b59846ab97496defa31fe,
+        type: 3}
+      propertyPath: ColorModule.gradient.minGradient.key0.g
+      value: 0.27830172
+      objectReference: {fileID: 0}
+    - target: {fileID: 8568469901025056934, guid: 8ce675268c7b59846ab97496defa31fe,
+        type: 3}
+      propertyPath: ColorModule.gradient.minGradient.key0.b
+      value: 0.8584906
+      objectReference: {fileID: 0}
+    - target: {fileID: 8568469901025056934, guid: 8ce675268c7b59846ab97496defa31fe,
+        type: 3}
+      propertyPath: ColorBySpeedModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8568469901025056934, guid: 8ce675268c7b59846ab97496defa31fe,
+        type: 3}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8568469901025056934, guid: 8ce675268c7b59846ab97496defa31fe,
+        type: 3}
+      propertyPath: LightsModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8568469901025056934, guid: 8ce675268c7b59846ab97496defa31fe,
+        type: 3}
+      propertyPath: LightsModule.color
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8568469901025056934, guid: 8ce675268c7b59846ab97496defa31fe,
+        type: 3}
+      propertyPath: LightsModule.ratio
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8568469901025056934, guid: 8ce675268c7b59846ab97496defa31fe,
+        type: 3}
+      propertyPath: LightsModule.randomDistribution
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8568469901025056935, guid: 8ce675268c7b59846ab97496defa31fe,
         type: 3}
       propertyPath: m_Materials.Array.data[0]

@@ -19,8 +19,9 @@ public class SellManager : MonoBehaviour
     {
     }
 
-    public void SellTower()
+    public void SellTower(GameObject turret)
     {
+
         Debug.LogError("Sell Tower...");
     }
 }

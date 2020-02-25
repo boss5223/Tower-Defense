@@ -16320,7 +16320,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &618574458
 Transform:
   m_ObjectHideFlags: 0
@@ -16980,7 +16980,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 625947036}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.27999988, y: 1.52, z: 1}
+  m_LocalPosition: {x: -0.27999988, y: 0.02, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1727310829}
@@ -17001,7 +17001,7 @@ MonoBehaviour:
   spawnerid: 3
   Timer: 40
   timeCountdown: 0
-  enemy: {fileID: 4560981042494302093, guid: 6a30cc6d59ec3aa4a91559027c410cb7, type: 3}
+  enemy: {fileID: 1721433940380118029, guid: d174088cf5268ae4d88ef7b1533e3608, type: 3}
   EnemyName: Elite
   spawnMonsterSize: 6
   repeat: 4
@@ -46403,7 +46403,7 @@ MonoBehaviour:
   spawnerid: 1
   Timer: 5
   timeCountdown: 0
-  enemy: {fileID: 2631961003728484662, guid: 212ad7b739ad1c94d8ee675dd188b6d7, type: 3}
+  enemy: {fileID: 43045507572766591, guid: c96c656675eb2a347ba64f0713dc6c6e, type: 3}
   EnemyName: normal
   spawnMonsterSize: 6
   repeat: 4
@@ -49487,7 +49487,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1863820708}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.88, y: 0, z: -16}
+  m_LocalPosition: {x: 0.88, y: -0.38, z: -16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1864942}
@@ -50328,7 +50328,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1889338726}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.27999988, y: 1.52, z: 1}
+  m_LocalPosition: {x: -0.27999988, y: 0.09, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1727310829}
@@ -50349,7 +50349,7 @@ MonoBehaviour:
   spawnerid: 2
   Timer: 20
   timeCountdown: 0
-  enemy: {fileID: 7179057167663468167, guid: 748c63dd7b03573439da9e751684f17c, type: 3}
+  enemy: {fileID: 8090415909271290763, guid: 3d5239bcce5d6d84fae820d9e87956a6, type: 3}
   EnemyName: Aggressive
   spawnMonsterSize: 6
   repeat: 4

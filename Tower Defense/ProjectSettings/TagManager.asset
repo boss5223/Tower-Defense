@@ -11,6 +11,8 @@ TagManager:
   - PS
   - Bar
   - Bullet
+  - SB
+  - Dead
   layers:
   - Default
   - TransparentFX

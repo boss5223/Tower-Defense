@@ -20,6 +20,8 @@ public class Bullet : MonoBehaviour
             return;
         }
         Vector3 direction = target.transform.position - transform.position;
+        transform.Translate(direction.normalized * speed * Time.deltaTime, Space.World);
+        transform.rotation = Quaternion.LookRotation(direction);
         float distanceThisFrame = speed * Time.deltaTime;
 
         if(direction.magnitude <= distanceThisFrame)

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class EnemyAttribute : MonoBehaviour
 {
     // Start is called before the first frame update
-    [HideInInspector]public bool isDead = false;
+    [HideInInspector] public bool isDead = false;
     Animator anim;
     [Header("Attribute")]
     public int enemyId;
@@ -17,10 +17,12 @@ public class EnemyAttribute : MonoBehaviour
     public float firerate;
     public float movespd;
     public int coinDrop;
+    [HideInInspector]public bool Dead;
     [Header("Health Bar")]
     public GameObject healthBar;
-    [HideInInspector]public Image Bar;
-    [HideInInspector]public Image BarFilled;
+    [HideInInspector] public Image Bar;
+    [HideInInspector] public Image BarFilled;
+    private Turrets turret;
 
     void Start()
     {
@@ -28,6 +30,9 @@ public class EnemyAttribute : MonoBehaviour
         BarFilled = new List<Image>(Bar.GetComponentsInChildren<Image>()).Find(img => img != Bar);
         GetEnemyData();
         anim = GetComponent<Animator>();
+        turret = GetComponent<Turrets>();
+        //turret.enemyDead = false;
+
     }
     void Update()
     {
@@ -39,12 +44,20 @@ public class EnemyAttribute : MonoBehaviour
     {
         if (hp <= 0)
         {
-            Destroy(gameObject);
-            Destroy(Bar.gameObject);
-            EnemyRespawn.monsterInField -= 1;
-            DropCoin();
-            hp = maxHP;
+            StartCoroutine(waitDestroy(1.5f));    
         }
+    }
+    private IEnumerator waitDestroy(float time)
+    {
+        Enemy enemy = GetComponent<Enemy>();
+        enemy.speed = 0;
+        transform.gameObject.tag = "Dead";
+        anim.SetBool("Dead", true);
+        yield return new WaitForSeconds(time);
+        Destroy(gameObject);
+        EnemyRespawn.monsterInField -= 1;
+        DropCoin();
+        Destroy(Bar.gameObject);
     }
     public void GetHit(float damage, float penetration)
     {
