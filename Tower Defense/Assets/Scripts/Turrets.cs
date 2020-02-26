@@ -127,14 +127,14 @@ public class Turrets : CancelSellButton
 
     public override void OnMouseDown()
     {
-        if (sellState != null)
-        {
-            Debug.LogError("sellState is exist");
-        }
-        else
-        {
-            SellButton = Instantiate(Sell, FindObjectOfType<Canvas>().transform).GetComponent<Button>();
-        }
+        //if (sellState != null)
+        //{
+        //    Debug.LogError("sellState is exist");
+        //}
+        //else
+        //{
+        //    SellButton = Instantiate(Sell, FindObjectOfType<Canvas>().transform).GetComponent<Button>();
+        //}
     }
     void CreateSellButton()
     {
