@@ -281,6 +281,8 @@ MonoBehaviour:
   Sell: {fileID: 8750962814164581891, guid: 97d7b4d19150e5547a5fe20a2293e4b5, type: 3}
   SellButton: {fileID: 0}
   firerate: 1.5
+  enemyDead: 0
+  nearestEnemy: {fileID: 0}
 --- !u!65 &8983920699372422982
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -16966,7 +16966,7 @@ GameObject:
   - component: {fileID: 625947037}
   - component: {fileID: 625947038}
   m_Layer: 0
-  m_Name: Spawn (2)
+  m_Name: Mons3Spawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16984,7 +16984,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1727310829}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!114 &625947038
 MonoBehaviour:
@@ -22773,6 +22773,57 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 879038506}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &880980301
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 880980302}
+  - component: {fileID: 880980303}
+  m_Layer: 0
+  m_Name: Mons3Spawn (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &880980302
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 880980301}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.27999988, y: 0.02, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1727310829}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &880980303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 880980301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c176061c3a4441f469f6873b6034a868, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnerid: 3
+  Timer: 70
+  timeCountdown: 0
+  enemy: {fileID: 1721433940380118029, guid: d174088cf5268ae4d88ef7b1533e3608, type: 3}
+  EnemyName: Elite
+  spawnMonsterSize: 6
+  repeat: 5
+  storage: {fileID: 1677156704}
 --- !u!1 &882368925
 GameObject:
   m_ObjectHideFlags: 0
@@ -35128,6 +35179,57 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1299204708}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1300118776
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1300118777}
+  - component: {fileID: 1300118778}
+  m_Layer: 0
+  m_Name: Mons2Spawn(1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1300118777
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1300118776}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.27999988, y: 0.09, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1727310829}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &1300118778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1300118776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c176061c3a4441f469f6873b6034a868, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnerid: 2
+  Timer: 50
+  timeCountdown: 0
+  enemy: {fileID: 8090415909271290763, guid: 3d5239bcce5d6d84fae820d9e87956a6, type: 3}
+  EnemyName: Aggressive
+  spawnMonsterSize: 6
+  repeat: 4
+  storage: {fileID: 1677156704}
 --- !u!1 &1303221370
 GameObject:
   m_ObjectHideFlags: 0
@@ -45629,8 +45731,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1769213572}
+  - {fileID: 2121768859}
   - {fileID: 1889338727}
+  - {fileID: 1300118777}
   - {fileID: 625947037}
+  - {fileID: 880980302}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
@@ -46368,7 +46473,7 @@ GameObject:
   - component: {fileID: 1769213572}
   - component: {fileID: 1769213573}
   m_Layer: 0
-  m_Name: Spawn
+  m_Name: Mon1Spawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50314,7 +50419,7 @@ GameObject:
   - component: {fileID: 1889338727}
   - component: {fileID: 1889338728}
   m_Layer: 0
-  m_Name: Spawn (1)
+  m_Name: Mons2Spawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50332,7 +50437,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1727310829}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!114 &1889338728
 MonoBehaviour:
@@ -55719,6 +55824,57 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2121150415}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &2121768858
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2121768859}
+  - component: {fileID: 2121768860}
+  m_Layer: 0
+  m_Name: Mon1Spawn (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2121768859
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2121768858}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.27999988, y: 0.38, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1727310829}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &2121768860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2121768858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c176061c3a4441f469f6873b6034a868, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnerid: 1
+  Timer: 30
+  timeCountdown: 0
+  enemy: {fileID: 43045507572766591, guid: c96c656675eb2a347ba64f0713dc6c6e, type: 3}
+  EnemyName: normal
+  spawnMonsterSize: 6
+  repeat: 5
+  storage: {fileID: 1677156704}
 --- !u!1 &2123490378
 GameObject:
   m_ObjectHideFlags: 0

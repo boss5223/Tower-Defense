@@ -8,7 +8,7 @@ public class Turrets : CancelSellButton
 {
    
     [Header("Attribute")]
-    public string turretsID;
+    public int turretsID;
     public float range;
     public Transform partToRotate;
     public float rotateSpeed = 10f;
@@ -34,6 +34,7 @@ public class Turrets : CancelSellButton
     {
         storage = GameObject.FindGameObjectWithTag("Storage");
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
+        //GetTurretsData();
     }
 
     void Update()
@@ -166,4 +167,20 @@ public class Turrets : CancelSellButton
     {
         transform.parent = parent;
     }
+    //void GetTurretsData()
+    //{
+    //    var turretsData = TurretsDataContainer.Instance.GetTurretsData();
+    //    Debug.Log(turretsData);
+    //    for (int i = 0; i < turretsData.Count; i++)
+    //    {
+    //        if (turretsData[i].turretID == turretsID)
+    //        {
+    //            damage = turretsData[i].turretDamage;
+    //            penetration = turretsData[i].penetration;
+    //            range = turretsData[i].turretDistance;
+    //            firerate = turretsData[i].turretFirerate;
+    //        }
+    //    }
+
+    //}
 }

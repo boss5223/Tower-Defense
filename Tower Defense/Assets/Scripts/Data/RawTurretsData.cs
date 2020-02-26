@@ -1,6 +1,6 @@
 ﻿public class RawTurretsData 
 {
-    public string turretID;
+    public int turretID;
     public string turretName;
     public int turretHp;
     public int turretMaxHP;

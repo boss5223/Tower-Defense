@@ -130,7 +130,11 @@ MonoBehaviour:
   bulletPrefab: {fileID: 0}
   firePoint: []
   storage: {fileID: 0}
+  Sell: {fileID: 0}
+  SellButton: {fileID: 0}
   firerate: 0
+  enemyDead: 0
+  nearestEnemy: {fileID: 0}
   HitParticle: {fileID: 8568469901025056936, guid: 8ce675268c7b59846ab97496defa31fe,
     type: 3}
 --- !u!54 &6973918745663429937

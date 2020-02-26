@@ -4730,7 +4730,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8926742dc60ad84469826f02c6d03606, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turretsID: 3
+  turretsID: 1
   range: 0
   partToRotate: {fileID: 0}
   rotateSpeed: 10
@@ -4742,6 +4742,8 @@ MonoBehaviour:
   Sell: {fileID: 0}
   SellButton: {fileID: 0}
   firerate: 0
+  enemyDead: 0
+  nearestEnemy: {fileID: 0}
   HitParticle: {fileID: 7381159116500442672, guid: 66fb85bc1f1c6a74c9cffd7f1975cc50,
     type: 3}
 --- !u!54 &1406330880488503384
