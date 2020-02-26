@@ -16,6 +16,9 @@ public class UIManager : MonoBehaviour
     [Header("Panel")]
     public GameObject winPanel;
     public GameObject losePanel;
+    public GameObject starPanel1;
+    public GameObject starPanel2;
+    public GameObject starPanel3;
     [Header("GameObject")]
     public GameObject spawn;
     public GameObject node;
@@ -23,6 +26,7 @@ public class UIManager : MonoBehaviour
     public GameObject particleStorage;
     private EnemyAttribute enemyAttribute;
     private GameObject towerToSell;
+    private int star;
 
     void Start()
     {
@@ -59,19 +63,45 @@ public class UIManager : MonoBehaviour
     {
         TowerPoints.text = GameManager.towerPoint.ToString();
     }
+    void resultStar()
+    {
+        if (EnemyRespawn.monsterInField <= 0 && GameManager.towerPoint >= 20)
+        {
+            star = 3;
+            starPanel1.SetActive(false);
+            starPanel2.SetActive(false);
+            starPanel3.SetActive(true);
+        }
+        else if(EnemyRespawn.monsterInField > 0 && GameManager.towerPoint >=20)
+        {
+            star = 2;
+            starPanel1.SetActive(false);
+            starPanel2.SetActive(true);
+            starPanel3.SetActive(false);
+        }
+        else if (EnemyRespawn.monsterInField > 4 && GameManager.towerPoint<=10)
+        {
+            star = 1;
+            starPanel1.SetActive(true);
+            starPanel2.SetActive(false);
+            starPanel3.SetActive(false);
+        }
+    }
     void SetEndPanel()
     {
         if (GameManager.timeIngame <= 0 && GameManager.towerPoint > 0)
         {
             winPanel.SetActive(true);
+            resultStar();
             losePanel.SetActive(false);
             spawn.SetActive(false);
             node.SetActive(false);
             storage.SetActive(false);
             particleStorage.SetActive(false);
             GameObject bar = GameObject.FindGameObjectWithTag("Bar");
+            GameObject button = GameObject.FindGameObjectWithTag("SB");
             Destroy(bar);
-            
+            Destroy(button);
         }
         else if (GameManager.towerPoint <= 0)
         {
@@ -82,6 +112,8 @@ public class UIManager : MonoBehaviour
             storage.SetActive(false);
             particleStorage.SetActive(false);
             GameObject bar = GameObject.FindGameObjectWithTag("Bar");
+            GameObject button = GameObject.FindGameObjectWithTag("SB");
+            Destroy(button);
             Destroy(bar);
 
         }

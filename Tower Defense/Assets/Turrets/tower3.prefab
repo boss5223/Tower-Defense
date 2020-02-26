@@ -58,7 +58,7 @@ MonoBehaviour:
   range: 20
   partToRotate: {fileID: 497288405784263738}
   rotateSpeed: 10
-  damage: 110
+  damage: 1000
   penetration: 20
   bulletPrefab: {fileID: 7516430321065112551, guid: ef14ed3479517814c9a4977b3cb99a4a,
     type: 3}

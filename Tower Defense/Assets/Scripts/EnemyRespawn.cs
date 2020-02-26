@@ -12,26 +12,31 @@ public class EnemyRespawn : MonoBehaviour
     public GameObject storage;
 
     [HideInInspector]public static int monsterInField = 0;
+    GameObject[] countEnemy;
     GameObject LastEnemy;
     void Start()
     {
         timeCountdown = 15f;
         this.gameObject.name = EnemyName + "spawn point";
-        //PoolManager.instance.CreatePool(enemy, spawnMonsterSize);
         InvokeRepeating("SpawnEnemy", Timer, repeat);
     }
     void Update()
     {
         DifficultWave();
+        countEnemy = GameObject.FindGameObjectsWithTag("Enemy");
+        for (monsterInField = 0; monsterInField < countEnemy.Length; monsterInField++)
+        {
+            monsterInField += 1; 
+        }
     }
 
     void SpawnEnemy()
     {
-            //PoolManager.instance.ReusePool(enemy,transform.position, Quaternion.identity);
             GameObject superEnemy = Instantiate(enemy, transform.position, Quaternion.identity);
             LastEnemy = GameObject.Find(enemy.name + "(Clone)");
             superEnemy.transform.SetParent(storage.transform);
             Debug.Log("เวลาเพิ่มความถี่" + timeCountdown);
+            Debug.Log("จำนวนมอนสเตอร์" + monsterInField);
     }
     void DifficultWave()
     {

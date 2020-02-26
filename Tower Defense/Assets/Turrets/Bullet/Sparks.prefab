@@ -4730,7 +4730,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8926742dc60ad84469826f02c6d03606, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turretsID: 1
+  turretsID: 3
   range: 0
   partToRotate: {fileID: 0}
   rotateSpeed: 10

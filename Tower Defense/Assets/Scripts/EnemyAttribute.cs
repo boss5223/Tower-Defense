@@ -44,7 +44,8 @@ public class EnemyAttribute : MonoBehaviour
     {
         if (hp <= 0)
         {
-            StartCoroutine(waitDestroy(1.5f));    
+            StartCoroutine(waitDestroy(1.5f));
+            //EnemyRespawn.monsterInField -= 1;
         }
     }
     private IEnumerator waitDestroy(float time)
@@ -55,7 +56,6 @@ public class EnemyAttribute : MonoBehaviour
         anim.SetBool("Dead", true);
         yield return new WaitForSeconds(time);
         Destroy(gameObject);
-        EnemyRespawn.monsterInField -= 1;
         DropCoin();
         Destroy(Bar.gameObject);
     }

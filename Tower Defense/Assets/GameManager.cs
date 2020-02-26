@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public static int currency = 350;
+    public static int currency = 1000;
     public static float timeUp;
     public static float timeIngame;
     public static float prepairingTime;
     public static int towerPoint;
+    public GameObject SpawnPoint;
     void Start()
     {
         Application.targetFrameRate = 60;
@@ -46,6 +47,10 @@ public class GameManager : MonoBehaviour
     }
     void TimeControl()
     {
+        if(timeIngame <= 10)
+        {
+            SpawnPoint.SetActive(false);
+        }
         if (timeIngame <= 0)
         {
             timeIngame = 0;
