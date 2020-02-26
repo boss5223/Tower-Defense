@@ -17,7 +17,7 @@ public class Shop : MonoBehaviour
     public void PurchaseStandardTurrets()
     {
         Debug.Log("PurchaseStandardTurrets Success");
-        BuildManager.instance.SetTurretsToBuild(BuildManager.instance.standardTurretPrefab,150); 
+        BuildManager.instance.SetTurretsToBuild(BuildManager.instance.standardTurretPrefab,200); 
     }
     public void PurchaseAnotherTurrets()
     {
@@ -27,7 +27,7 @@ public class Shop : MonoBehaviour
     public void PurchaseSpecialTurrets()
     {
         Debug.Log("PurchaseSpecialTurrets Success");
-        BuildManager.instance.SetTurretsToBuild(BuildManager.instance.specialTurretPrefab,500);
+        BuildManager.instance.SetTurretsToBuild(BuildManager.instance.specialTurretPrefab,650);
     }
   
 }

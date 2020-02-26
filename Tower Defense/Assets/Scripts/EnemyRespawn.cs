@@ -10,9 +10,6 @@ public class EnemyRespawn : MonoBehaviour
     public int spawnMonsterSize;
     public float repeat;
     public GameObject storage;
-
-    [HideInInspector]public static int monsterInField = 0;
-    GameObject[] countEnemy;
     GameObject LastEnemy;
     void Start()
     {
@@ -23,11 +20,6 @@ public class EnemyRespawn : MonoBehaviour
     void Update()
     {
         DifficultWave();
-        countEnemy = GameObject.FindGameObjectsWithTag("Enemy");
-        for (monsterInField = 0; monsterInField < countEnemy.Length; monsterInField++)
-        {
-            monsterInField += 1; 
-        }
     }
 
     void SpawnEnemy()
@@ -36,7 +28,6 @@ public class EnemyRespawn : MonoBehaviour
             LastEnemy = GameObject.Find(enemy.name + "(Clone)");
             superEnemy.transform.SetParent(storage.transform);
             Debug.Log("เวลาเพิ่มความถี่" + timeCountdown);
-            Debug.Log("จำนวนมอนสเตอร์" + monsterInField);
     }
     void DifficultWave()
     {

@@ -102,12 +102,6 @@ public class Turrets : CancelSellButton
 
     void Shoot()
     {
-        if (nearestEnemy.GetComponent<EnemyAttribute>().hp <= 0)
-        {
-            UpdateTarget();
-        }
-        else
-        {
             for (int i = 0; i < firePoint.Length; i++)
             {
                 bullet = Instantiate(bulletPrefab, firePoint[i].transform.position, transform.rotation);
@@ -119,7 +113,7 @@ public class Turrets : CancelSellButton
                 bulletScript.FindTarget(target);
                 return;
             }
-        }
+        
 
     }
     

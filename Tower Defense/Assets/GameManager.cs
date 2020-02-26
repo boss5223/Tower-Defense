@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public static int currency = 1000;
+    public static int currency = 350;
     public static float timeUp;
     public static float timeIngame;
     public static float prepairingTime;
     public static int towerPoint;
     public GameObject SpawnPoint;
+    public static int monsterInField ;
+    GameObject[] countEnemy;
+    GameObject[] countTurrets;
+    public static GameObject turretRemaining;
     void Start()
     {
         Application.targetFrameRate = 60;
@@ -28,10 +32,13 @@ public class GameManager : MonoBehaviour
         }
         TimeControl();
         SetTowerPoint();
+        CountMonster();
+        CountTurrets();
         if (Input.GetKey(KeyCode.Escape))
         {
             Application.Quit();
         }
+
     }
     void CountPreTime()
     {
@@ -49,7 +56,8 @@ public class GameManager : MonoBehaviour
     {
         if(timeIngame <= 10)
         {
-            SpawnPoint.SetActive(false);
+            Destroy(SpawnPoint);
+
         }
         if (timeIngame <= 0)
         {
@@ -67,6 +75,22 @@ public class GameManager : MonoBehaviour
         if (towerPoint < 0)
         {
             towerPoint = 0;
+        }
+    }
+    void CountMonster()
+    {
+        countEnemy = GameObject.FindGameObjectsWithTag("Enemy");
+        for (monsterInField = 0; monsterInField < countEnemy.Length; monsterInField++)
+        {
+            monsterInField += 1;
+        }
+    }
+    void CountTurrets()
+    {
+        countTurrets = GameObject.FindGameObjectsWithTag("Turrets");
+        for (int amountTurret = 0; amountTurret < countTurrets.Length; amountTurret++)
+        {
+            turretRemaining = countTurrets[amountTurret];
         }
     }
 }

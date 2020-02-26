@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
@@ -9,6 +10,8 @@ public class UIManager : MonoBehaviour
     public Button Gun2;
     public Button Gun3;
     private Button Sell;
+    public Button Continue;
+    public Button Continue2;
     [Header("Text")]
     public Text Currency;
     public Text Time;
@@ -27,6 +30,9 @@ public class UIManager : MonoBehaviour
     private EnemyAttribute enemyAttribute;
     private GameObject towerToSell;
     private int star;
+    private GameObject[] bar;
+    private GameObject[] sellButton;
+    private GameObject barRemaining;
 
     void Start()
     {
@@ -36,16 +42,19 @@ public class UIManager : MonoBehaviour
         Gun1.onClick.AddListener(() => Shop.instance.PurchaseStandardTurrets());
         Gun2.onClick.AddListener(() => Shop.instance.PurchaseAnotherTurrets());
         Gun3.onClick.AddListener(() => Shop.instance.PurchaseSpecialTurrets());
-        
+        Continue.onClick.AddListener(() => LoadScene());
+        Continue2.onClick.AddListener(() => LoadScene());
+
 
         //Sell.onClick.AddListener(() => DestroyTower());
     }
-    void Update()
+    void LateUpdate()
     {
         SetEndPanel();
         UpdateCurrency();
         Updatetime();
         UpdateTowerPoint();
+        CountBar();
     }
     void UpdateCurrency()
     {
@@ -65,26 +74,31 @@ public class UIManager : MonoBehaviour
     }
     void resultStar()
     {
-        if (EnemyRespawn.monsterInField <= 0 && GameManager.towerPoint >= 20)
+        if (GameManager.monsterInField <= 0 && GameManager.towerPoint >= 20)
         {
             star = 3;
             starPanel1.SetActive(false);
             starPanel2.SetActive(false);
             starPanel3.SetActive(true);
         }
-        else if(EnemyRespawn.monsterInField > 0 && GameManager.towerPoint >=20)
+        else if(GameManager.monsterInField > 0 && GameManager.towerPoint >=20)
         {
             star = 2;
             starPanel1.SetActive(false);
             starPanel2.SetActive(true);
             starPanel3.SetActive(false);
         }
-        else if (EnemyRespawn.monsterInField > 4 && GameManager.towerPoint<=10)
+        else if (GameManager.monsterInField > 4 && GameManager.towerPoint<=10)
         {
             star = 1;
             starPanel1.SetActive(true);
             starPanel2.SetActive(false);
             starPanel3.SetActive(false);
+        }
+        else
+        {
+            star = 0;
+            Debug.LogError("Fail");
         }
     }
     void SetEndPanel()
@@ -94,29 +108,35 @@ public class UIManager : MonoBehaviour
             winPanel.SetActive(true);
             resultStar();
             losePanel.SetActive(false);
-            spawn.SetActive(false);
             node.SetActive(false);
-            storage.SetActive(false);
+            GameManager.turretRemaining.SetActive(false);
             particleStorage.SetActive(false);
-            GameObject bar = GameObject.FindGameObjectWithTag("Bar");
+            barRemaining.SetActive(false);
             GameObject button = GameObject.FindGameObjectWithTag("SB");
-            Destroy(bar);
             Destroy(button);
         }
         else if (GameManager.towerPoint <= 0)
         {
             losePanel.SetActive(true);
             winPanel.SetActive(false);
-            spawn.SetActive(false);
             node.SetActive(false);
-            storage.SetActive(false);
+            GameManager.turretRemaining.SetActive(false);
             particleStorage.SetActive(false);
-            GameObject bar = GameObject.FindGameObjectWithTag("Bar");
+            barRemaining.SetActive(false);
             GameObject button = GameObject.FindGameObjectWithTag("SB");
             Destroy(button);
-            Destroy(bar);
-
         }
     }
- 
+    void CountBar()
+    {
+        bar = GameObject.FindGameObjectsWithTag("Bar");
+       for (int i = 0; i < bar.Length; i++)
+        {
+            barRemaining = bar[i];
+        }
+    }
+    void LoadScene()
+    {
+        SceneManager.LoadScene(0);
+    }
 }
