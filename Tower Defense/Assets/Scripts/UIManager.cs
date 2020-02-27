@@ -109,22 +109,25 @@ public class UIManager : MonoBehaviour
             resultStar();
             losePanel.SetActive(false);
             node.SetActive(false);
-            GameManager.turretRemaining.SetActive(false);
+            storage.SetActive(false);
             particleStorage.SetActive(false);
             barRemaining.SetActive(false);
             GameObject button = GameObject.FindGameObjectWithTag("SB");
             Destroy(button);
+            GameManager.currency = 350;
         }
-        else if (GameManager.towerPoint <= 0)
+        else if (GameManager.towerPoint <= 0 || GameManager.timeIngame <= 0 && GameManager.towerPoint <= 0)
         {
             losePanel.SetActive(true);
             winPanel.SetActive(false);
             node.SetActive(false);
-            GameManager.turretRemaining.SetActive(false);
+            storage.SetActive(false);
             particleStorage.SetActive(false);
             barRemaining.SetActive(false);
             GameObject button = GameObject.FindGameObjectWithTag("SB");
             Destroy(button);
+            Destroy(button);
+            GameManager.currency = 350;
         }
     }
     void CountBar()

@@ -75,7 +75,9 @@ public class EnemyAttribute : MonoBehaviour
     public void GetCheckPoint()
     {
         hp = 0;
-        SettingAttribute();
+        transform.gameObject.tag = "Dead";
+        Destroy(gameObject);
+        Bar.gameObject.SetActive(false);
     }
     public void DropCoin()
     {

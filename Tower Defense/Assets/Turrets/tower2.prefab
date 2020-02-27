@@ -271,7 +271,7 @@ MonoBehaviour:
   rotateSpeed: 10
   damage: 45
   penetration: 5
-  bulletPrefab: {fileID: 826367506855969395, guid: 305c82e5c0212024384aa2ea45005269,
+  bulletPrefab: {fileID: 375546435756300970, guid: 3c8273aed69f2ff46a6a1da7f30ceb30,
     type: 3}
   firePoint:
   - {fileID: 2249924025280706935}

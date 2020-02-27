@@ -1,16 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public static int currency = 350;
+    public static int currency = 1000;
     public static float timeUp;
     public static float timeIngame;
     public static float prepairingTime;
     public static int towerPoint;
     public GameObject SpawnPoint;
-    public static int monsterInField ;
+    public static int monsterInField=0 ;
     GameObject[] countEnemy;
     GameObject[] countTurrets;
     public static GameObject turretRemaining;
@@ -20,6 +21,7 @@ public class GameManager : MonoBehaviour
         prepairingTime = 5f;
         timeIngame = 90f;
         towerPoint = 20;
+        Invoke("CountMonster", 94.9f);
     }
 
     void Update()
@@ -30,10 +32,9 @@ public class GameManager : MonoBehaviour
             CountTimeup();
             CountTimeGame();
         }
-        TimeControl();
         SetTowerPoint();
-        CountMonster();
         CountTurrets();
+        TimeControl();
         if (Input.GetKey(KeyCode.Escape))
         {
             Application.Quit();
@@ -51,6 +52,7 @@ public class GameManager : MonoBehaviour
     void CountTimeGame()
     {
         timeIngame -= Time.deltaTime;
+
     }
     void TimeControl()
     {
@@ -84,6 +86,7 @@ public class GameManager : MonoBehaviour
         {
             monsterInField += 1;
         }
+        Debug.Log("จำนวนมอนสเตอร์" + monsterInField);
     }
     void CountTurrets()
     {
