@@ -26,6 +26,7 @@ public class Turrets : CancelSellButton
     public float firerate;
     private float firerateCount =0;
     private GameObject bullet;
+    private List<GameObject> bulletShot;
     private List<TurretsBuild> turretsBuilds;
     [HideInInspector]public bool enemyDead = false;
     [HideInInspector]public GameObject nearestEnemy;
@@ -106,6 +107,7 @@ public class Turrets : CancelSellButton
             for (int i = 0; i < firePoint.Length; i++)
             {
                 bullet = Instantiate(bulletPrefab, firePoint[i].transform.position, transform.rotation);
+                //bulletShot.Add(bullet);
             }
             bullet.transform.SetParent(storage.transform);
             Bullet bulletScript = bullet.GetComponent<Bullet>();

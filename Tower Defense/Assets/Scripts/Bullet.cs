@@ -12,7 +12,7 @@ public class Bullet : MonoBehaviour
         target = myTarget;
     }
  
-    void Start()
+    void Awake()
     {
         particleBullet.Play();
     }
