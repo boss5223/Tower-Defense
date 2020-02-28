@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public static int currency = 1000;
+    public static int currency = 350;
     public static float timeUp;
     public static float timeIngame;
     public static float prepairingTime;
