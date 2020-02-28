@@ -24,19 +24,4 @@ public class HitScript : Turrets
             Destroy(hitEffect, 2f);
         }
     }
-    void GetTurretsData()
-    {
-        var turretsData = TurretsDataContainer.Instance.GetTurretsData();
-        Debug.Log(turretsData);
-        for (int i = 0; i < turretsData.Count; i++)
-        {
-            if (turretsData[i].turretID == turretsID)
-            {
-                range = turretsData[i].turretDistance;
-                firerate = turretsData[i].turretFirerate;
-                damage = turretsData[i].turretDamage;
-                penetration = turretsData[i].penetration;
-            }
-        }
-    }
 }

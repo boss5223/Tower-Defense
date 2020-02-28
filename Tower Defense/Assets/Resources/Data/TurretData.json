@@ -7,7 +7,7 @@
         "turretdamage": 33,
         "penetration": 0,
         "turretdef": 20,
-        "turretdistance": 15,
+        "turretdistance": 50,
         "turretfirerate": 2.3
     },
     {
@@ -18,7 +18,7 @@
         "turretdamage": 40,
         "penetration": 5,
         "turretdef": 20,
-        "turretdistance": 18,
+        "turretdistance": 50,
         "turretfirerate": 1.5
     },
     {
@@ -29,7 +29,7 @@
         "turretdamage": 90,
         "penetration": 20,
         "turretdef": 20,
-        "turretdistance": 20,
+        "turretdistance": 50,
         "turretfirerate": 0.5
     }
 ]
