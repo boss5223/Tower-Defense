@@ -254,13 +254,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDead: 0
   enemyId: 3
-  hp: 0
-  maxHP: 0
-  enemyDamage: 0
-  enemyDef: 0
-  firerate: 0
-  movespd: 0
-  coinDrop: 0
+  hp: 220
+  maxHP: 220
+  enemyDamage: 25
+  enemyDef: 30
+  firerate: 2
+  movespd: 2
+  coinDrop: 30
   Dead: 0
   healthBar: {fileID: 2430884129390622951, guid: 748b2c6b5cf6b7341914ff40e639958f,
     type: 3}

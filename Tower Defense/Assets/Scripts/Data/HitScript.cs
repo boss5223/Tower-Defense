@@ -10,7 +10,7 @@ public class HitScript : Turrets
     AudioSource source;
     void Start()
     {
-        GetTurretsData();
+        //GetTurretsData();
         storage = GameObject.FindGameObjectWithTag("Storage");
         source = GetComponent<AudioSource>();
     }

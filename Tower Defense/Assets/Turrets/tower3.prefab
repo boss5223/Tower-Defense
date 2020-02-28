@@ -55,10 +55,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turretsID: 3
-  range: 20
+  range: 35
   partToRotate: {fileID: 497288405784263738}
   rotateSpeed: 10
-  damage: 1000
+  damage: 90
   penetration: 20
   bulletPrefab: {fileID: 2714124232036941632, guid: e0b582cd3eab2a94b81eafd51042cdcf,
     type: 3}

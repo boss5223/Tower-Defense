@@ -9620,7 +9620,7 @@ MonoBehaviour:
   range: 0
   partToRotate: {fileID: 0}
   rotateSpeed: 10
-  damage: 0
+  damage: 33
   penetration: 0
   bulletPrefab: {fileID: 0}
   firePoint: []

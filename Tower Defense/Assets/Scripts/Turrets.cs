@@ -35,7 +35,7 @@ public class Turrets : CancelSellButton
     {
         storage = GameObject.FindGameObjectWithTag("Storage");
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
-        GetTurretsData();
+        //GetTurretsData();
     }
 
     void Update()
@@ -163,20 +163,20 @@ public class Turrets : CancelSellButton
     {
         transform.parent = parent;
     }
-   public void GetTurretsData()
-    {
-        var turretsData = TurretsDataContainer.Instance.GetTurretsData();
-        Debug.Log(turretsData);
-        for (int i = 0; i < turretsData.Count; i++)
-        {
-            if (turretsData[i].turretID == turretsID)
-            {
-                range = turretsData[i].turretDistance;
-                firerate = turretsData[i].turretFirerate;
-                damage = turretsData[i].turretDamage;
-                penetration = turretsData[i].penetration;
-            }
-        }
-    }
+   //public void GetTurretsData()
+   // {
+   //     var turretsData = TurretsDataContainer.Instance.GetTurretsData();
+   //     Debug.Log(turretsData);
+   //     for (int i = 0; i < turretsData.Count; i++)
+   //     {
+   //         if (turretsData[i].turretID == turretsID)
+   //         {
+   //             range = turretsData[i].turretDistance;
+   //             firerate = turretsData[i].turretFirerate;
+   //             damage = turretsData[i].turretDamage;
+   //             penetration = turretsData[i].penetration;
+   //         }
+   //     }
+   // }
 
 }

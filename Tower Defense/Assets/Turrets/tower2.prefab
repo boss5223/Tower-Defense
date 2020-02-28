@@ -266,7 +266,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turretsID: 2
-  range: 18
+  range: 30
   partToRotate: {fileID: 4239964152113669911}
   rotateSpeed: 10
   damage: 45
