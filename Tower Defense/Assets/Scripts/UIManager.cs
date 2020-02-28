@@ -113,6 +113,7 @@ public class UIManager : MonoBehaviour
             node.SetActive(false);
             storage.SetActive(false);
             particleStorage.SetActive(false);
+            barRemaining = GameObject.FindGameObjectWithTag("Bar");
             barRemaining.SetActive(false);
             UI.SetActive(false);
             ShopUI.SetActive(false);
@@ -127,6 +128,7 @@ public class UIManager : MonoBehaviour
             node.SetActive(false);
             storage.SetActive(false);
             particleStorage.SetActive(false);
+            barRemaining = GameObject.FindGameObjectWithTag("Bar");
             barRemaining.SetActive(false);
             UI.SetActive(false);
             ShopUI.SetActive(false);
