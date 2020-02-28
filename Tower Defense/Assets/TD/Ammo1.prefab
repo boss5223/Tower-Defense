@@ -9632,6 +9632,8 @@ MonoBehaviour:
   nearestEnemy: {fileID: 0}
   HitParticle: {fileID: 5156272142731070858, guid: 5a3a61bb834febb48bff7b56b4a9ffef,
     type: 3}
+  closeEffect: {fileID: 3206923951479177660}
+  sound: {fileID: 8300000, guid: bbd3e3827241f724e86a27e4783d0285, type: 3}
 --- !u!54 &7094706407505063108
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9658,7 +9660,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: bbd3e3827241f724e86a27e4783d0285, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
