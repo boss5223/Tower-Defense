@@ -22,6 +22,8 @@ public class UIManager : MonoBehaviour
     public GameObject starPanel1;
     public GameObject starPanel2;
     public GameObject starPanel3;
+    public GameObject UI;
+    public GameObject ShopUI;
     [Header("GameObject")]
     public GameObject spawn;
     public GameObject node;
@@ -112,6 +114,8 @@ public class UIManager : MonoBehaviour
             storage.SetActive(false);
             particleStorage.SetActive(false);
             barRemaining.SetActive(false);
+            UI.SetActive(false);
+            ShopUI.SetActive(false);
             GameObject button = GameObject.FindGameObjectWithTag("SB");
             Destroy(button);
             GameManager.currency = 350;
@@ -124,6 +128,8 @@ public class UIManager : MonoBehaviour
             storage.SetActive(false);
             particleStorage.SetActive(false);
             barRemaining.SetActive(false);
+            UI.SetActive(false);
+            ShopUI.SetActive(false);
             GameObject button = GameObject.FindGameObjectWithTag("SB");
             Destroy(button);
             Destroy(button);
