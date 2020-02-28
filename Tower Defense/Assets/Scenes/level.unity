@@ -30451,7 +30451,7 @@ Camera:
   m_FOVAxisMode: 0
   m_SensorSize: {x: 4.8, y: 3.5}
   m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 1.1954908
+  m_FocalLength: 2.582738
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -30460,7 +30460,7 @@ Camera:
     height: 1
   near clip plane: 0.01
   far clip plane: 100
-  field of view: 111.3231
+  field of view: 68.24121
   orthographic: 0
   orthographic size: 27.069078
   m_Depth: -1
