@@ -6,11 +6,18 @@ public class Bullet : MonoBehaviour
 {
     private Transform target;
     public float speed;
+    public ParticleSystem particleBullet;
+    public ParticleSystem particleTrail;
     public void FindTarget(Transform myTarget)
     {
         target = myTarget;
     }
  
+    void Awake()
+    {
+        particleBullet.Play();
+        particleTrail.Play();
+    }
  
     void Update()
     {
