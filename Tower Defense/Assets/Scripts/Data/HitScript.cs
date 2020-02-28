@@ -5,11 +5,12 @@ using UnityEngine;
 public class HitScript : Turrets
 {
     public GameObject HitParticle;
-    
+    private AudioSource source;
     void Start()
     {
         GetTurretsData();
         storage = GameObject.FindGameObjectWithTag("Storage");
+        source = GetComponent<AudioSource>();
     }
     void OnTriggerEnter(Collider other)
     {
@@ -22,6 +23,7 @@ public class HitScript : Turrets
             stat.GetHit(damage,penetration);
             Destroy(gameObject);
             Destroy(hitEffect, 2f);
+            source.Play();
         }
     }
 }
