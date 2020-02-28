@@ -60,7 +60,7 @@ MonoBehaviour:
   rotateSpeed: 10
   damage: 1000
   penetration: 20
-  bulletPrefab: {fileID: 1548545345045823599, guid: d82ab0a191259a44091839f01f2ebcd3,
+  bulletPrefab: {fileID: 2714124232036941632, guid: e0b582cd3eab2a94b81eafd51042cdcf,
     type: 3}
   firePoint:
   - {fileID: 7201811288346349243}
@@ -718,7 +718,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7201811288346349243}
   m_LocalRotation: {x: -0, y: 0.98914677, z: -0, w: 0.14693126}
-  m_LocalPosition: {x: -0.08, y: 11.106272, z: 0.27}
+  m_LocalPosition: {x: 0.2, y: 11.106272, z: -0.06}
   m_LocalScale: {x: 33.560825, y: 36.51353, z: 33.560825}
   m_Children: []
   m_Father: {fileID: 4432339181270277307}
